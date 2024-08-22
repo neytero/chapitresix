@@ -1,0 +1,36 @@
+.section3LandingMobile{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    margin: 0px 10px;
+}
+.section3LandingMobile .textContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+}
+
+.section3LandingMobile .textContainer p{
+    font-family: 'calsonpro';
+    font-size: 15px;
+    letter-spacing: 0.06rem;
+    line-height: 18px;
+    margin: 0px;
+    text-align: justify;
+}
+
+.section3LandingMobile .textContainer .title{
+    font-family: 'calsonpro';
+    font-size: 17px;
+    letter-spacing: 0.03rem;
+    line-height: 18px;
+    font-style: italic;
+    margin: 0px;
+}
+
+.section3LandingMobile .imgMobile{
+    width: 60%;
+    height: auto;
+    margin: auto;
+}

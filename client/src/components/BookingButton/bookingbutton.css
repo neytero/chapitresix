@@ -1,0 +1,30 @@
+/* bookingbutton.css */
+.reserve-button {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border: none;
+    border-top: 1px solid #ddd;
+    padding: 20px;
+    font-size: 16px;
+    font-family: 'gustavo';
+    letter-spacing: 0.03rem;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    z-index: 1000;
+    background-color: #FEFAF1;
+    border-top: 1px solid black;
+    display: none;
+}
+
+.button-transparent {
+    background-color: transparent;
+}
+
+@media (max-width: 1024px) {
+    .reserve-button {
+        display: block;
+    }
+}

@@ -1,0 +1,77 @@
+{
+    "home": {
+      "en": {
+        "landing": {
+          "button": "Book",
+          "submenu1": "hotels",
+          "submenu2": "history",
+          "submenu3": "actualities",
+          "submenu4": "the music"
+        },
+        "textBlock": {
+          "title": "Hotel Edition: Paris and Beyond.",
+          "text1": "Écrire et faire vivre des histoires, redorer de Belles Endormies, imaginer des atmosphères uniques pour accueillir ses voyageurs : c’est la raison d’être du groupe Chapitre Six. Raconter des adresses iconiques, partager la modernité d’ambiances authentiques, célébrer chaque passage, de jour et de nuit, (ré)inventer des maisons…",
+          "text2": "À Paris bien sûr, à Montmartre, dans le Marais, sur les Grands Boulevards, à Saint-Germain, près de l’Opera Garnier ou les Champs Élysées. À Saint-Tropez et au Cap d’Antibes, très prochainement dans la forêt de Barbizon ou bientôt à la montagne… Les nuits sont douces, les tables joyeuses, on s’y régale autant des jeux coloriels des décors que des mariages de saveurs imaginés par des esthètes du goût.",
+          "text3": "À chaque lieu son histoire, son expérience, entre passé et futur, rêve et réalité.",
+          "titremobile": "Des hôtels et des histoires",
+          "textmobile1": "Écrire et faire vivre des histoires, redorer de Belles Endormies, imaginer des atmosphères uniques pour accueillir ses voyageurs : c’est la raison d’être du groupe Chapitre Six. Raconter des adresses iconiques, partager la modernité d’ambiances authentiques, célébrer chaque passage, de jour et de nuit, (ré)inventer des maisons… À chaque lieu son histoire, son expérience, entre passé et futur, rêve et réalité.",
+          "textmobile2": "À Paris bien sûr, à Montmartre, dans le Marais, sur les Grands Boulevards, à Saint-Germain, près de l’Opera Garnier ou les Champs Élysées. À Saint-Tropez et au Cap d’Antibes, très prochainement dans la forêt de Barbizon ou bientôt à la montagne… Les nuits sont douces, les tables joyeuses, on s’y régale autant des jeux coloriels des décors que des mariages de saveurs imaginés par des esthètes du goût. Comme à la maison, on regarde, on vit, on revient."
+        },
+        "footer": {
+          "recrutement": "recruitment",
+          "contact": "contact",
+          "mentions": "legal information",
+          "instagram": "instagram",
+          "linkedin": "linkedin",
+          "facebook": "facebook",
+          "newsletter": "newsletter",
+          "sub": "subscribe"
+        },
+        "other": {
+          "wait": "Upcoming"
+        }
+      },
+      "fr": {
+        "landing": {
+          "button": "Réserver",
+          "submenu1": "les hôtels",
+          "submenu2": "l'histoire",
+          "submenu3": "les actualités",
+          "submenu4": "la musique"
+        },
+        "textBlock": {
+          "title": "édition d’hôtels. paris et ailleurs.",
+          "text1": "Écrire et faire vivre des histoires, redorer de Belles Endormies, imaginer des atmosphères uniques pour accueillir ses voyageurs : c’est la raison d’être du groupe Chapitre Six. Raconter des adresses iconiques, partager la modernité d’ambiances authentiques, célébrer chaque passage, de jour et de nuit, (ré)inventer des maisons…",
+          "text2": "À Paris bien sûr, à Montmartre, dans le Marais, sur les Grands Boulevards, à Saint-Germain, près de l’Opera Garnier ou les Champs Élysées. À Saint-Tropez et au Cap d’Antibes, très prochainement dans la forêt de Barbizon ou bientôt à la montagne… Les nuits sont douces, les tables joyeuses, on s’y régale autant des jeux coloriels des décors que des mariages de saveurs imaginés par des esthètes du goût.",
+          "text3": "À chaque lieu son histoire, son expérience, entre passé et futur, rêve et réalité.",
+          "titremobile": "Des hôtels et des histoires",
+          "textmobile1": "Écrire et faire vivre des histoires, redorer de Belles Endormies, imaginer des atmosphères uniques pour accueillir ses voyageurs : c’est la raison d’être du groupe Chapitre Six. Raconter des adresses iconiques, partager la modernité d’ambiances authentiques, célébrer chaque passage, de jour et de nuit, (ré)inventer des maisons… À chaque lieu son histoire, son expérience, entre passé et futur, rêve et réalité.",
+          "textmobile2": "À Paris bien sûr, à Montmartre, dans le Marais, sur les Grands Boulevards, à Saint-Germain, près de l’Opera Garnier ou les Champs Élysées. À Saint-Tropez et au Cap d’Antibes, très prochainement dans la forêt de Barbizon ou bientôt à la montagne… Les nuits sont douces, les tables joyeuses, on s’y régale autant des jeux coloriels des décors que des mariages de saveurs imaginés par des esthètes du goût. Comme à la maison, on regarde, on vit, on revient."
+        },
+        "footer": {
+          "recrutement": "recrutement",
+          "contact": "contact",
+          "mentions": "mention Légales",
+          "instagram": "instagram",
+          "linkedin": "linkedin",
+          "facebook": "facebook",
+          "newsletter": "newsletter",
+          "sub": "s'abonner"
+        },
+        "other": {
+          "wait": "Prochainement"
+        }
+      }
+    },
+    "history": {
+      "en": {
+        "title": "Our History",
+        "text": "This is the English version of our history page."
+      },
+      "fr": {
+        "title": "Notre Histoire",
+        "text": "Ceci est la version française de notre page d'histoire."
+      }
+    }
+  }
+  
