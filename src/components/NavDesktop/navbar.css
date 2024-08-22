@@ -16,55 +16,54 @@
     }
   }
   
-  
-
-button{
+  button {
     background: none;
-  border: none;
-  padding: 0;
-  margin: 0;
-  outline: none;
-}
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+  }
   
-.navContainer{
+  .navContainer {
     width: 100%;
     z-index: 100;
     position: fixed;
     top: 0;
     background-color: #FEFAF1;
     transition: background-color 0.6s ease;
-}
-
-.navContainer.transparent {
+  }
+  
+  .navContainer.transparent {
     background-color: rgba(255, 255, 255, 0); /* Ajustez la transparence selon vos besoins */
     transition: background-color 0.6s ease;
-}
-
-.smallNavContainer{
+  }
+  
+  .smallNavContainer {
     width: calc(100% - 40px);
     margin: 0px 20px;
     display: flex;
     justify-content: space-between;
     padding: 50px 0px;
-}
-
-.navRight{
+  }
+  
+  .navRight {
     display: flex;
     align-items: flex-end;
     gap: 15px;
-}
-
-.booking{
-    font-family:'gustavo';
+  }
+  
+  .booking {
+    font-family: 'gustavo';
     font-size: 17px;
     letter-spacing: 0.03rem;
     text-transform: uppercase;
-}
-
-.booking:hover{
+  }
+  
+  .booking:hover {
     cursor: pointer;
-}
-.menu {
+  }
+  
+  .menu {
     display: none;
     flex-direction: column;
     height: 100vh;
@@ -75,18 +74,18 @@ button{
     z-index: 99;
     position: fixed;
     width: 100%;
-}
-
-.menu.open {
+  }
+  
+  .menu.open {
     display: flex;
     background-color: #FEFAF1;
-}
-
-.menu img {
+  }
+  
+  .menu img {
     align-self: flex-start;
-}
-
-.subMenu {
+  }
+  
+  .subMenu {
     display: flex;
     flex-direction: column;
     height: 50%;
@@ -96,8 +95,9 @@ button{
     justify-content: center;
     margin: auto;
     gap: 10px;
-}
-.subMenu .hotel{
+  }
+  
+  .subMenu .hotel {
     font-size: 40px;
     text-decoration: none;
     text-transform: uppercase;
@@ -105,149 +105,155 @@ button{
     color: black;
     letter-spacing: 0.03rem;
     margin: 0px;
-}
-
-.subMenu .hotel:hover{
+  }
+  
+  .subMenu .hotel:hover {
     cursor: pointer;
-}
-
-.subMenu a {
+  }
+  
+  .subMenu a {
     font-size: 40px;
     text-decoration: none;
     text-transform: uppercase;
     font-family: 'gustavo';
     color: black;
     letter-spacing: 0.03rem;
-}
-
-.bottomLine {
+  }
+  
+  .bottomLine {
     display: flex;
     width: calc(100% - 40px);
     margin: 0px 20px 20px;
     justify-content: space-between;
-}
-.langue{
+  }
+  
+  .langue {
     display: flex;
     gap: 15px;
-}
-
-.langue button:hover{
+  }
+  
+  .langue button:hover {
     border-bottom: 1px solid black;
     cursor: pointer;
     transition-duration: 300ms;
-}
-
-.langue button:focus{
+  }
+  
+  .langue button:focus {
     border-bottom: 1px solid black;
-}
-
-.langue button{
+  }
+  
+  .langue button {
     font-family: 'gustavo';
     font-size: 14px;
     letter-spacing: 0.03rem;
     text-transform: uppercase;
-}
-
-.bottomLine .contact{
-    font-family:'gustavo';
+  }
+  
+  .bottomLine .contact {
+    font-family: 'gustavo';
     font-size: 17px;
     letter-spacing: 0.03rem;
     text-transform: uppercase;
-}
-
-.hotellist{
+  }
+  
+  .hotellist {
     width: fit-content;
     margin: auto;
     display: flex;
     flex-direction: column;
     gap: 8px;
-}
-.hotellist .hotelLink{
+  }
+  
+  .hotellist .hotelLink {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-}
-
-.hotelLink .nextHotelLink{
+  }
+  
+  .hotelLink .nextHotelLink {
     font-family: 'calsonpro';
     font-size: 13px;
     font-style: italic;
     letter-spacing: 0.03rem;
-}
-.hotellist a{
+  }
+  
+  .hotellist a {
     font-family: 'calsonpro';
     font-size: 17px;
     text-transform: initial;
-}
-
-.hotellist a, .hotelLink .nextHotelLink{
+  }
+  
+  .hotellist a,
+  .hotelLink .nextHotelLink {
     margin: 0px;
-}
-
-.titleHotelLink{
+  }
+  
+  .titleHotelLink {
     font-family: 'gustavo';
     text-transform: uppercase;
     text-align: left;
     letter-spacing: 0.03rem;
     font-size: 14px;
     margin: 0px;
-}
-
-
-@media screen and (max-width: 1024px){
-    .Sublogo, .booking{
-        display: none;
+  }
+  
+  @media screen and (max-width: 1024px) {
+    .Sublogo,
+    .booking {
+      display: none;
     }
-
-    .smallNavContainer{
-        padding-top: 20px;
-        margin-left: 10px;
+  
+    .smallNavContainer {
+      padding-top: 20px;
+      margin-left: 10px;
     }
-
-    .Logo{
-        width: 85%;
-        height: auto;
+  
+    .Logo {
+      width: 85%;
+      height: auto;
     }
-    
-    .burger-icon svg{
-        width: 30px;
-        height: 20px;
+  
+    .burger-icon svg {
+      width: 30px;
+      height: 20px;
     }
-
-    .bottomLine{
-        justify-content: flex-end;
+  
+    .bottomLine {
+      justify-content: flex-end;
     }
-
-    .bottomLine .langue{
-        flex-direction: column-reverse;
+  
+    .bottomLine .langue {
+      flex-direction: column-reverse;
     }
-    .bottomLine .contact{
-        display: none;
+  
+    .bottomLine .contact {
+      display: none;
     }
-
-    .subMenu{
-        gap: 25px;
+  
+    .subMenu {
+      gap: 25px;
     }
-    
-    .subMenu .hotel, .subMenu a{
-        font-size: 26px;
+  
+    .subMenu .hotel,
+    .subMenu a {
+      font-size: 26px;
     }
-
+  
     .titleHotelLink {
-        font-size: 12px;
+      font-size: 12px;
     }
-
-    .hotellist a{
-        font-size: 12px;
+  
+    .hotellist a {
+      font-size: 12px;
     }
-
-    .hotelLink .nextHotelLink{
-        font-size: 10px;
+  
+    .hotelLink .nextHotelLink {
+      font-size: 10px;
     }
-
-    .hotelLink img{
-        width: 10px;
-        height: auto;
+  
+    .hotelLink img {
+      width: 10px;
+      height: auto;
     }
-}
+  }
+  

@@ -42,16 +42,13 @@ const App = () => {
 
   useEffect(() => {
     const footer = document.querySelector('footer');
-    const landingSection = document.querySelector('.landing-section');
 
-    if (!footer || !landingSection) return;
+    if (!footer) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.target === footer) {
-            setIsButtonVisible(!entry.isIntersecting);
-          } else if (entry.target === landingSection) {
             setButtonBackground(entry.isIntersecting ? 'transparent' : 'white');
           }
         });
@@ -63,7 +60,6 @@ const App = () => {
     );
 
     observer.observe(footer);
-    observer.observe(landingSection);
 
     return () => {
       observer.disconnect();
@@ -75,7 +71,7 @@ const App = () => {
       <Navbar
         changePage={changePage}
         changeLanguage={setLanguage}
-        content={contentState}
+        isTransparent={buttonBackground === 'transparent'}
       />
       <Routes>
         <Route path="/" element={<HomePage content={contentState} />} />
