@@ -18,7 +18,7 @@ const App = () => {
     history: { title: '', text: '' },
     footer: { recrutement: '', instagram: '' },
   });
-  const [isButtonVisible, setIsButtonVisible] = useState(true);
+  const [isButtonVisible] = useState(true);
   const [buttonBackground, setButtonBackground] = useState('transparent');
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
 
