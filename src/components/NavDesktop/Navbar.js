@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import LOGO from '../../assets/LOGO-CHAPITRE-SIX.svg';
 import SUBLOGO from '../../assets/Deshistoires.svg';
 import FLECHE from '../../assets/FLECHE.svg';
-import '../NavDesktop/navbar.css';
+import './navbar.css';
 import content from '../../content.json';
 
 const Navbar = ({ changePage, changeLanguage, isTransparent }) => {
