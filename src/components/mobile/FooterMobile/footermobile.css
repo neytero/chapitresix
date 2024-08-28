@@ -32,6 +32,10 @@
     gap: 20px;
 }
 
+.langueMobileFooter button{
+    color: black;
+}
+
 .langueMobileFooter button:hover, .langueMobileFooter button:active{
     border-bottom: 1px solid black;
 }

@@ -3,6 +3,7 @@
     background-color: #FEFAF1;
     display: flex;
     align-items: flex-end;
+    position: relative;
 
 }
 
@@ -16,6 +17,34 @@
     display: none;
 }
 
+
+.citation{
+    position: absolute;
+    left: 80px;
+    bottom: 40px;
+    color: white;
+    font-family: "calsonpro";
+    font-size: 17px;
+    letter-spacing: 0.04rem;
+    margin: 0px;
+}
+
+.volume-controls {
+    position: absolute;
+    bottom: 40px;
+    right: 80px;
+    cursor: pointer;
+  }
+
+  .volume-icon {
+    width: 50px; 
+    height: auto;
+  }
+
+  .subTitle{
+    display: none;
+  }
+
 @media screen and (max-width: 1024px){
     .imgLandingMobile{
         display: block;
@@ -24,7 +53,26 @@
         margin: 0px 10px 10px 10px;
     }
 
+    .container{
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+    }
+
     .container .imgLandingDesktop{
         display: none;
     }
+
+    .volume-controls, .citation{
+        display: none;
+    }
+    .subTitle{
+        display: block;
+        font-family: "calsonproitalic";
+        font-size: 18px;
+        letter-spacing: 0.03rem;
+        margin: 0px;
+        margin-left: 10px;
+    }
 }
+

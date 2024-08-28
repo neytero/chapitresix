@@ -154,7 +154,7 @@ const HotelList = () => {
         <Link to="/" onClick={() => handleOpenCarousel(3)}>HÔTEL LA PONCHE, SAINT-TROPEZ</Link>
         <Link to="/" onClick={() => handleOpenCarousel(4)}>CAP D’ANTIBES BEACH HOTEL, CAP D’ANTIBES</Link>
         <div className='smallHotelListContainer'>
-          <Link to="/" onClick={() => handleOpenCarousel(5)}>CHALET SAINT-GEORGES, MÉGÈVE</Link>
+          <Link to="/" onClick={() => handleOpenCarousel(5)}>CHALET SAINT-GEORGES, MEGÈVE</Link>
           <p>{content.home.fr.other.wait}</p>
         </div>
       </div>

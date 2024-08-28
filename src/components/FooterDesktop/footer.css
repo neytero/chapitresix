@@ -1,19 +1,19 @@
-.footerContainer{
+.footerContainer {
     height: 100vh;
     background-color: #FEFAF1;
 }
 
-.imageContainer{
+.imageContainer {
     width: 100%;
     display: flex;
 }
 
-.imageContainer img{
+.imageContainer img {
     width: 50%;
     height: auto;
 }
 
-.footerContentContainer{
+.footerContentContainer {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -24,11 +24,11 @@
     gap: 20px;
 }
 
-.footerContentContainer p{
+.footerContentContainer p {
     margin: 0px;
 }
 
-.languefooter{
+.languefooter {
     position: absolute;
     top: 20px;
     left: 50%;
@@ -37,26 +37,32 @@
     gap: 20px;
 }
 
-.languefooter button:hover{
-    border-bottom: 1px solid black;
-    cursor: pointer;
-    transition-duration: 300ms;
-}
-
-.languefooter button:focus{
-    border-bottom: 1px solid black;
-}
-
-.languefooter button{
+.languefooter button {
     font-family: 'gustavo';
     font-size: 14px;
     letter-spacing: 0.03rem;
     text-transform: uppercase;
+    border: none; /* Enlève la bordure par défaut */
+    background: transparent; /* Arrière-plan transparent */
+    cursor: pointer;
+    transition-duration: 300ms;
+}
+
+.languefooter button.active {
+    border-bottom: 1px solid black; /* Bordure noire pour le bouton actif */
+}
+
+.languefooter button:hover {
+    border-bottom: 1px solid black;
+}
+
+.languefooter button:focus {
+    border-bottom: 1px solid black;
 }
 
 .footerContentContainer .ligne1, 
 .footerContentContainer .ligne2, 
-.footerContentContainer .ligne3{
+.footerContentContainer .ligne3 {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -66,13 +72,16 @@
     text-transform: uppercase;
 }
 
-.newsletter{
+.newsletter {
     display: flex;
     align-items: flex-end;
     gap: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
 }
 
-.newsletter p{
+.newsletter p {
     line-height: 11px;
 }
 
@@ -81,4 +90,9 @@ input {
     border-bottom: 1px solid black;
     height: 15px;
     width: 240px;
+}
+
+
+.newsletter p:hover, .ligne1 p:hover, .ligne2 p:hover, .ligne3 p:hover{
+    cursor: pointer;
 }

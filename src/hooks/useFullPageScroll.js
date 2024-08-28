@@ -18,19 +18,17 @@ const useFullPageScroll = () => {
 
       if (isScrolling) return;
 
-      // Ajuster ce seuil selon les besoins (par exemple, 30)
       const SCROLL_THRESHOLD = 20;
 
       if (event.deltaY && Math.abs(event.deltaY) >= SCROLL_THRESHOLD) {
         isScrolling = true;
         if (event.deltaY > 0 && currentSectionIndex < totalSections - 1) {
-          // Scroll vers le bas
+
           sections[currentSectionIndex].classList.remove('active');
-          sections[currentSectionIndex].classList.add('fixed'); // Garde la section en place
+          sections[currentSectionIndex].classList.add('fixed');
           currentSectionIndex++;
           sections[currentSectionIndex].classList.add('active');
         } else if (event.deltaY < 0 && currentSectionIndex > 0) {
-          // Scroll vers le haut
           sections[currentSectionIndex].classList.remove('active');
           sections[currentSectionIndex].classList.remove('fixed');
           currentSectionIndex--;
@@ -38,7 +36,7 @@ const useFullPageScroll = () => {
         }
         setTimeout(() => {
           isScrolling = false;
-        }, 600); // Durée égale à la durée de transition CSS
+        }, 600);
       }
     };
 
@@ -48,26 +46,23 @@ const useFullPageScroll = () => {
 
     const touchEndHandler = (event) => {
       touchEndY = event.changedTouches[0].clientY;
-      const SCROLL_THRESHOLD = 30; // Ajustez ce seuil selon vos besoins
+      const SCROLL_THRESHOLD = 30;
 
       if (Math.abs(touchEndY - touchStartY) >= SCROLL_THRESHOLD) {
         isScrolling = true;
         if (touchEndY > touchStartY && currentSectionIndex > 0) {
-          // Scroll vers le haut
           sections[currentSectionIndex].classList.remove('active');
           sections[currentSectionIndex].classList.remove('fixed');
           currentSectionIndex--;
           sections[currentSectionIndex].classList.add('active');
         } else if (touchEndY < touchStartY && currentSectionIndex < totalSections - 1) {
-          // Scroll vers le bas
           sections[currentSectionIndex].classList.remove('active');
-          sections[currentSectionIndex].classList.add('fixed'); // Garde la section en place
-          currentSectionIndex++;
+          sections[currentSectionIndex].classList.add('fixed'); 
           sections[currentSectionIndex].classList.add('active');
         }
         setTimeout(() => {
           isScrolling = false;
-        }, 600); // Durée égale à la durée de transition CSS
+        }, 600);
       }
     };
 
@@ -75,7 +70,6 @@ const useFullPageScroll = () => {
     window.addEventListener('touchstart', touchStartHandler);
     window.addEventListener('touchend', touchEndHandler);
 
-    // Activer la première section
     sections[currentSectionIndex].classList.add('active');
 
     return () => {

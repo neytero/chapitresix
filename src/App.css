@@ -48,8 +48,29 @@ body, html {
 }
 
 @font-face {
+  font-family: 'gustavoreg';
+  src: url('./fonts/Gustavo-Regular.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'calsonbold';
+  src: url('./fonts/AdobeCaslonProBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'calsonpro';
   src: url('./fonts/ACaslonPro-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
+}
+
+@font-face {
+  font-family: 'calsonproitalic';
+  src: url('./fonts/AdobeCaslonProItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
 }

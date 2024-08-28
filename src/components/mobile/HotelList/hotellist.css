@@ -15,12 +15,12 @@
 
 .subTitleHotelList {
     margin: 0px;
-    font-family: 'calsonpro';
+    font-family: 'calsonproitalic';
     font-size: 17px;
     letter-spacing: 0.03rem;
     line-height: 18px;
     font-style: italic;
-    margin-bottom: 80px;
+    margin-bottom: 65px;
 }
 
 .hotelListContainer {
@@ -28,7 +28,7 @@
     flex-direction: column;
     align-items: center;
     gap: 45px;
-    margin-bottom: 80px;
+    margin-bottom: 65px;
 }
 
 .hotelListContainer a {
@@ -48,7 +48,7 @@
 
 .hotelListContainer p {
     margin: 0px;
-    font-family: 'calsonpro';
+    font-family: 'calsonproitalic';
     font-size: 17px;
     letter-spacing: 0.03rem;
     line-height: 18px;
@@ -80,7 +80,7 @@
 
 .carouselSlider img {
     width: 100%;
-    height: auto;
+    height: 530px;
 }
 
 /* Assurez-vous que les boutons de défilement sont bien positionnés */
@@ -146,7 +146,7 @@
     left: 15px;
     color: white; 
     font-size: 13px; 
-    font-family: 'calsonpro';
+    font-family: 'calsonproitalic';
     letter-spacing: 0.03rem;
     font-weight: 100;
     font-style: italic;

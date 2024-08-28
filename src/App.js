@@ -18,9 +18,9 @@ const App = () => {
     history: { title: '', text: '' },
     footer: { recrutement: '', instagram: '' },
   });
-  const [isButtonVisible] = useState(true);
-  const [buttonBackground, setButtonBackground] = useState('transparent');
+  const [buttonVisibility, setButtonVisibility] = useState('show');
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
+  const [isLandingPage, setIsLandingPage] = useState(false);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 1024);
@@ -32,12 +32,14 @@ const App = () => {
     const initialPage = window.location.pathname.includes('history') ? 'history' : 'home';
     if (contentState[language] && contentState[language][initialPage]) {
       setContentState(contentState[language][initialPage]);
+      setIsLandingPage(initialPage === 'home');
     }
   }, [language, contentState]);
 
   const changePage = (page) => {
     window.history.pushState({}, '', `/${page}`);
     setContentState(contentState[language][page] || {});
+    setIsLandingPage(page === 'home');
   };
 
   useEffect(() => {
@@ -49,7 +51,7 @@ const App = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.target === footer) {
-            setButtonBackground(entry.isIntersecting ? 'transparent' : 'white');
+            setButtonVisibility(entry.isIntersecting ? 'hidden' : 'show');
           }
         });
       },
@@ -71,7 +73,7 @@ const App = () => {
       <Navbar
         changePage={changePage}
         changeLanguage={setLanguage}
-        isTransparent={buttonBackground === 'transparent'}
+        isTransparent={buttonVisibility === 'hidden'}
       />
       <Routes>
         <Route path="/" element={<HomePage content={contentState} />} />
@@ -86,7 +88,11 @@ const App = () => {
           <Footer changeLanguage={setLanguage} content={contentState.footer} />
         </footer>
       )}
-      {isButtonVisible && <BookingButton background={buttonBackground} />}
+      {buttonVisibility && (
+        <BookingButton 
+          className={`reserve-button ${buttonVisibility} ${isLandingPage ? 'landing' : ''}`}
+        />
+      )}
     </Router>
   );
 };

@@ -33,9 +33,40 @@ const images = [
   PICTURE11
 ];
 
+const hotelNames = [
+  "HÔtel Hana",
+  "MONSIEUR GEORGE",
+  "LE BUS PALLADIUM",
+  "HÔTEL LA PONCHE",
+  "CAP D’ANTIBES BEACH HOTEL",
+  "CHALET SAINT-GEORGES",
+  "MAISON SAINTONGE",
+  "HÔTEL DES Académies et des Arts",
+  "MONSIEUR CADET",
+  "MONSIEUR ARISTIDE",
+  "LA FOLIE Barbizon"
+];
+
+const hotelAddresses = [
+  "17, rue du Quatre-Septembre, Paris 2",
+  "17, rue Washington, Paris 8",
+  "6, rue Pierre Fontaine, Paris 9",
+  "5, rue des Remparts, Saint-Tropez",
+  "10, boulevard Maréchal Juin, Cap d’Antibes",
+  "159, rue Mgr Conseil, Megève",
+  "16, rue de Saintonge, Paris 3",
+  "15, rue de la Grande Chaumière, Paris 6",
+  "4, rue Cadet, Paris 9",
+  "3, rue Aristide Bruant, Paris 18",
+  "17, rue du Quatre-Septembre, Paris 2"
+];
+
 const HotelList2 = () => {
   const [isCarouselVisible, setCarouselVisible] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentHotelName, setCurrentHotelName] = useState(hotelNames[0]);
+  const [currentHotelAddress, setCurrentHotelAddress] = useState(hotelAddresses[0]);
+  const [fadeClass, setFadeClass] = useState(''); // Initial state without transition
   const sliderRef = useRef(null);
 
   useEffect(() => {
@@ -51,6 +82,8 @@ const HotelList2 = () => {
   const handleOpenCarousel = (index) => {
     setCurrentSlide(index);
     setCarouselVisible(true);
+    setCurrentHotelName(hotelNames[index]); // Set hotel name immediately
+    setCurrentHotelAddress(hotelAddresses[index]); // Set hotel address immediately
   };
 
   const handleCloseCarousel = () => {
@@ -97,7 +130,15 @@ const HotelList2 = () => {
     autoplaySpeed: 3000,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
-    ref: sliderRef
+    ref: sliderRef,
+    beforeChange: (oldIndex, newIndex) => {
+      setFadeClass(''); // Trigger fade-out
+      setTimeout(() => {
+        setCurrentHotelName(hotelNames[newIndex]);
+        setCurrentHotelAddress(hotelAddresses[newIndex]);
+        setFadeClass('visible'); // Trigger fade-in
+      }, 500); // Match this duration with CSS transition
+    }
   };
 
   return (
@@ -128,6 +169,9 @@ const HotelList2 = () => {
                 </div>
               ))}
             </Slider>
+            <div className={`carouselText ${fadeClass}`}>{currentHotelName}</div>
+            <div className={`carouselTextAdress ${fadeClass}`}>{currentHotelAddress}</div>
+            <p className='fly'>voyager</p>
           </div>
         </div>
       )}
