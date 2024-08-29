@@ -5,53 +5,43 @@ import '../LandingDesktop/landing.css';
 import VOLUMEON from '../../assets/VOLUME_ON.png';
 import VOLUMEOFF from '../../assets/VOLUME_OFF.png';
 
-const Landing = ({ content }) => {
+const Landing = () => {
   const [volumeOn, setVolumeOn] = useState(false);
   const videoRefDesktop = useRef(null);
   const videoRefMobile = useRef(null);
 
   const toggleVolume = () => {
-    if (videoRefDesktop.current) {
-      videoRefDesktop.current.muted = !volumeOn;
-    }
-    if (videoRefMobile.current) {
-      videoRefMobile.current.muted = !volumeOn;
-    }
-    setVolumeOn(!volumeOn);
+    setVolumeOn(prevVolumeOn => {
+      const newVolumeOn = !prevVolumeOn;
+      if (videoRefDesktop.current) {
+        videoRefDesktop.current.muted = !newVolumeOn;
+      }
+      if (videoRefMobile.current) {
+        videoRefMobile.current.muted = !newVolumeOn;
+      }
+      return newVolumeOn;
+    });
   };
 
   useEffect(() => {
-    const videoElementDesktop = videoRefDesktop.current;
-    const videoElementMobile = videoRefMobile.current;
+    const playVideo = async () => {
+      if (videoRefDesktop.current) {
+        try {
+          await videoRefDesktop.current.play();
+        } catch (error) {
+          console.error('Failed to play desktop video', error);
+        }
+      }
+      if (videoRefMobile.current) {
+        try {
+          await videoRefMobile.current.play();
+        } catch (error) {
+          console.error('Failed to play mobile video', error);
+        }
+      }
+    };
 
-    if (videoElementDesktop) {
-      videoElementDesktop.muted = !volumeOn;
-      videoElementDesktop.play().catch(error => {
-      });
-    }
-
-    if (videoElementMobile) {
-      videoElementMobile.muted = !volumeOn;
-      videoElementMobile.play().catch(error => {
-      });
-    }
-  }, [volumeOn]);
-
-  useEffect(() => {
-    const videoElementDesktop = videoRefDesktop.current;
-    const videoElementMobile = videoRefMobile.current;
-
-    if (videoElementDesktop) {
-      videoElementDesktop.muted = true;
-      videoElementDesktop.play().catch(error => {
-      });
-    }
-
-    if (videoElementMobile) {
-      videoElementMobile.muted = true;
-      videoElementMobile.play().catch(error => {
-      });
-    }
+    playVideo();
   }, []);
 
   return (
@@ -85,7 +75,6 @@ const Landing = ({ content }) => {
       </video>
 
       <p className='citation'>“Comme à la maison, on regarde, on vit, on revient.”</p>
-      
       
       <div className='volume-controls' onClick={toggleVolume}>
         <img
