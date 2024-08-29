@@ -69,7 +69,7 @@
 .carousel {
     position: relative;
     width: 105%;
-    height: 300px; /* Ajuste selon la taille de tes images */
+    height: 250px; /* Ajuste selon la taille de tes images */
     
     overflow-x: hidden;
 }
