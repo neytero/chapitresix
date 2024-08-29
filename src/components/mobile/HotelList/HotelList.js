@@ -2,11 +2,11 @@ import React, { useState, useRef, useEffect } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import '../HotelList/hotellist.css'; // Assurez-vous que ce fichier est après les importations slick-carousel
+import '../HotelList/hotellist.css';
 import { Link } from 'react-router-dom';
 import content from '../../../content.json';
 
-// Importation des images
+
 import PICTURE1 from '../../../assets/Home/mobile/caroussel/PHOTO1.jpg';
 import PICTURE2 from '../../../assets/Home/mobile/caroussel/PHOTO2.jpg';
 import PICTURE3 from '../../../assets/Home/mobile/caroussel/PHOTO3.jpg';
@@ -66,7 +66,7 @@ const HotelList = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentHotelName, setCurrentHotelName] = useState(hotelNames[0]);
   const [currentHotelAddress, setCurrentHotelAddress] = useState(hotelAddresses[0]);
-  const [fadeClass, setFadeClass] = useState(''); // Initial state without transition
+  const [fadeClass, setFadeClass] = useState('');
   const sliderRef = useRef(null);
 
   useEffect(() => {
@@ -80,10 +80,11 @@ const HotelList = () => {
   }, [isCarouselVisible, currentSlide]);
 
   const handleOpenCarousel = (index) => {
+    console.log(`Opening carousel for index: ${index}`);
     setCurrentSlide(index);
     setCarouselVisible(true);
-    setCurrentHotelName(hotelNames[index]); // Set hotel name immediately
-    setCurrentHotelAddress(hotelAddresses[index]); // Set hotel address immediately
+    setCurrentHotelName(hotelNames[index]);
+    setCurrentHotelAddress(hotelAddresses[index]);
   };
 
   const handleCloseCarousel = () => {
@@ -132,12 +133,12 @@ const HotelList = () => {
     nextArrow: <NextArrow />,
     ref: sliderRef,
     beforeChange: (oldIndex, newIndex) => {
-      setFadeClass(''); // Trigger fade-out
+      setFadeClass('');
       setTimeout(() => {
         setCurrentHotelName(hotelNames[newIndex]);
         setCurrentHotelAddress(hotelAddresses[newIndex]);
-        setFadeClass('visible'); // Trigger fade-in
-      }, 500); // Match this duration with CSS transition
+        setFadeClass('visible');
+      }, 500);
     }
   };
 
