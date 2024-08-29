@@ -34,7 +34,7 @@
     text-transform: uppercase;
     letter-spacing: 0.05rem;
     font-size: 15px;
-    margin-bottom: 60px;
+    margin-bottom: 35px;
     
 }
 
@@ -63,10 +63,12 @@
 
 .buttonCarousel p{
     font-family: "calsonbold";
+    margin-bottom: 10px;
+    margin-top: 0px;
 }
 .carousel {
     position: relative;
-    width: 100%;
+    width: 105%;
     height: 300px; /* Ajuste selon la taille de tes images */
     
     overflow-x: hidden;

@@ -3,6 +3,12 @@
     visibility: hidden;
   }
   
+
+  .Sublogo{
+    width: 100%;
+    height: auto;
+  }
+  
   .fade-in {
     animation: fadeIn 1s forwards;
   }
@@ -47,7 +53,7 @@
     margin: 0px 20px;
     display: flex;
     justify-content: space-between;
-    padding: 25px 0px;
+    padding: 34px 0px;
   }
   
   .navRight {

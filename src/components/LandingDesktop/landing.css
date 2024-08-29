@@ -20,7 +20,7 @@
 
 .citation{
     position: absolute;
-    left: 80px;
+    left: 60px;
     bottom: 40px;
     color: white;
     font-family: "calsonpro";
@@ -37,13 +37,10 @@
   }
 
   .volume-icon {
-    width: 50px; 
+    width: 25px; 
     height: auto;
   }
 
-  .subTitle{
-    display: none;
-  }
 
 @media screen and (max-width: 1024px){
     .imgLandingMobile{

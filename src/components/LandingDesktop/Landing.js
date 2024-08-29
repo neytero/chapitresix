@@ -2,8 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import LANDINGVIDEO from '../../assets/VIDEO_DESKTOP.mp4';
 import LANDINGVIDEOMOBILE from '../../assets/VIDEO_MOBILE.mov';
 import '../LandingDesktop/landing.css';
-import VOLUMEON from '../../assets/VOLUME_ON.png';
-import VOLUMEOFF from '../../assets/VOLUME_OFF.png';
+import VOLUMEON from '../../assets/VOLUME_ON.svg';
+import VOLUMEOFF from '../../assets/VOLUME_OFF.svg';
 
 const Landing = () => {
   const [volumeOn, setVolumeOn] = useState(false);
@@ -59,7 +59,6 @@ const Landing = () => {
       >
         Votre navigateur ne supporte pas la balise vidéo.
       </video>
-      <p className='subTitle'>Des hôtels et des histoires</p>
       <video
         className='imgLandingMobile'
         src={LANDINGVIDEOMOBILE}

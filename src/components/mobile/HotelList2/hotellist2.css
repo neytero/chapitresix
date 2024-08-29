@@ -6,9 +6,10 @@
 .hotelListSection2 {
     height: 100vh;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     margin: auto 10px;
     align-items: initial;
+    padding-top: 100px;
 }
 
 .subTitleHotelList2 {
