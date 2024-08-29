@@ -71,7 +71,7 @@ const hotelAddresses = [
 
 const TextBlock = ({ transitionDuration = 500 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  
+
   const handleContainerClick = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
@@ -91,7 +91,7 @@ const TextBlock = ({ transitionDuration = 500 }) => {
           </div>
           <div className="carousel">
             {images.map((image, index) => {
-              const position = (index - currentIndex + images.length) % images.length;
+              const position = (currentIndex - index + images.length) % images.length;
               const isVisible = position < 5;
               return (
                 <img

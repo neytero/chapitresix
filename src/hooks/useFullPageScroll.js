@@ -9,34 +9,38 @@ const useFullPageScroll = () => {
 
     if (totalSections === 0) return;
 
-    // Pour les événements tactiles
     let touchStartY = 0;
     let touchEndY = 0;
+
+    const SCROLL_THRESHOLD = 20; // Seuil de défilement de la souris
+    const TOUCH_THRESHOLD = 30; // Seuil de défilement tactile
+    const SCROLL_DURATION = 600; // Durée de la transition en ms
 
     const scrollHandler = (event) => {
       event.preventDefault();
 
       if (isScrolling) return;
 
-      const SCROLL_THRESHOLD = 20;
+      isScrolling = true;
 
-      if (event.deltaY && Math.abs(event.deltaY) >= SCROLL_THRESHOLD) {
-        isScrolling = true;
+      if (Math.abs(event.deltaY) >= SCROLL_THRESHOLD) {
         if (event.deltaY > 0 && currentSectionIndex < totalSections - 1) {
-
+          // Défilement vers le bas
           sections[currentSectionIndex].classList.remove('active');
           sections[currentSectionIndex].classList.add('fixed');
           currentSectionIndex++;
           sections[currentSectionIndex].classList.add('active');
         } else if (event.deltaY < 0 && currentSectionIndex > 0) {
+          // Défilement vers le haut
           sections[currentSectionIndex].classList.remove('active');
           sections[currentSectionIndex].classList.remove('fixed');
           currentSectionIndex--;
           sections[currentSectionIndex].classList.add('active');
         }
+        
         setTimeout(() => {
           isScrolling = false;
-        }, 600);
+        }, SCROLL_DURATION);
       }
     };
 
@@ -45,30 +49,36 @@ const useFullPageScroll = () => {
     };
 
     const touchEndHandler = (event) => {
+      event.preventDefault(); // Assurez-vous que l'événement tactile est pris en compte
       touchEndY = event.changedTouches[0].clientY;
-      const SCROLL_THRESHOLD = 30;
+      const touchDifference = touchEndY - touchStartY;
 
-      if (Math.abs(touchEndY - touchStartY) >= SCROLL_THRESHOLD) {
+      if (Math.abs(touchDifference) >= TOUCH_THRESHOLD) {
         isScrolling = true;
-        if (touchEndY > touchStartY && currentSectionIndex > 0) {
+
+        if (touchDifference > 0 && currentSectionIndex > 0) {
+          // Défilement vers le haut
           sections[currentSectionIndex].classList.remove('active');
           sections[currentSectionIndex].classList.remove('fixed');
           currentSectionIndex--;
           sections[currentSectionIndex].classList.add('active');
-        } else if (touchEndY < touchStartY && currentSectionIndex < totalSections - 1) {
+        } else if (touchDifference < 0 && currentSectionIndex < totalSections - 1) {
+          // Défilement vers le bas
           sections[currentSectionIndex].classList.remove('active');
-          sections[currentSectionIndex].classList.add('fixed'); 
+          sections[currentSectionIndex].classList.add('fixed');
+          currentSectionIndex++;
           sections[currentSectionIndex].classList.add('active');
         }
+
         setTimeout(() => {
           isScrolling = false;
-        }, 600);
+        }, SCROLL_DURATION);
       }
     };
 
-    window.addEventListener('wheel', scrollHandler);
-    window.addEventListener('touchstart', touchStartHandler);
-    window.addEventListener('touchend', touchEndHandler);
+    window.addEventListener('wheel', scrollHandler, { passive: false });
+    window.addEventListener('touchstart', touchStartHandler, { passive: false });
+    window.addEventListener('touchend', touchEndHandler, { passive: false });
 
     sections[currentSectionIndex].classList.add('active');
 
