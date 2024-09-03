@@ -1,0 +1,25 @@
+.historyImageSection{
+    height: 100vh;
+    position: relative;
+    display: flex;
+}
+
+.historyImageSection img{
+    width: auto;
+    height: 100%;
+
+}
+
+.historyImageSection p{
+    font-family: 'calsonproitalic';
+    font-size: 19px;
+    letter-spacing: 0.03rem;
+    line-height: 18px;
+    font-style: italic;
+    margin: 0px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}

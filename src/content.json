@@ -65,12 +65,66 @@
     },
     "history": {
       "en": {
-        "title": "Our History",
-        "text": "This is the English version of our history page."
+        "title1": "L’HISTOIRE",
+        "text1": "Collection de « maisons coups de cœur » construite sur l’envie de créer des lieux uniques, CHAPITRE SIX raconte l’art de recevoir avec élégance.. Chaque jour se tissent des histoires, se vivent des aventures, redessinant les codes du passé au présent. Dans la convivialité́ de ces maisons de famille, le confort de ces chambres et la joie de vivre de ces quartiers de Paris et d’ailleurs, chaque voyageur écrit aussi sa petite et, peut-être, sa grande Histoire.",
+        "text2": "On dîne sous la belle étoile de la Butte Montmartre chez Monsieur Aristide, on s’installe dans une suite mystérieuse, cachée dans le jardin de Monsieur George. A Saint-Tropez, on s’encanaille au bord de l’eau sur un air de jazz à La Ponche, quand au Cap d’Antibes c’est sur l’eau que l’on s’échappe en pédalo…",
+        "title2":"LE MOT DU FONDATEUR, NICOLAS SALTIEL",
+        "text3":"“Être transporté, ailleurs, loin de ses repères, le temps d’une nuit ou de quelques jours. Se raconter une histoire dont on est le héros… C’est cette évasion éphémère que j’ai toujours aimé vivre dans un hôtel, et que j’aime chaque jour faire vivre dans les nôtres.",
+        "text4":"Des chambres aux univers tous différents et originaux, des cafés chantants, un piano-bar pieds dans le sable, un juke-box nostalgique, des parfums et des sourires, des lits moelleux installés face aux toits parisiens et des massages holistiques, des épices levantines et des bonbons d’antan, nous mettons tout en œuvre pour que le voyage soit une épopée qui laisse une trace. Quel autre sens pourrait-on donner à notre métier d’hôtelier, si ce n’est celui d’offrir un chapitre d’histoire à chaque passage ?”",
+        "textmobile1":"Des hôtels et des histoires "
       },
       "fr": {
-        "title": "Notre Histoire",
-        "text": "Ceci est la version française de notre page d'histoire."
+        "title1": "L’HISTOIRE",
+        "text1": "Collection de « maisons coups de cœur » construite sur l’envie de créer des lieux uniques, CHAPITRE SIX raconte l’art de recevoir avec élégance.. Chaque jour se tissent des histoires, se vivent des aventures, redessinant les codes du passé au présent. Dans la convivialité́ de ces maisons de famille, le confort de ces chambres et la joie de vivre de ces quartiers de Paris et d’ailleurs, chaque voyageur écrit aussi sa petite et, peut-être, sa grande Histoire.",
+        "text2": "On dîne sous la belle étoile de la Butte Montmartre chez Monsieur Aristide, on s’installe dans une suite mystérieuse, cachée dans le jardin de Monsieur George. A Saint-Tropez, on s’encanaille au bord de l’eau sur un air de jazz à La Ponche, quand au Cap d’Antibes c’est sur l’eau que l’on s’échappe en pédalo…",
+        "title2":"LE MOT DU FONDATEUR, NICOLAS SALTIEL",
+        "text3":"“Être transporté, ailleurs, loin de ses repères, le temps d’une nuit ou de quelques jours. Se raconter une histoire dont on est le héros… C’est cette évasion éphémère que j’ai toujours aimé vivre dans un hôtel, et que j’aime chaque jour faire vivre dans les nôtres.",
+        "text4":"Des chambres aux univers tous différents et originaux, des cafés chantants, un piano-bar pieds dans le sable, un juke-box nostalgique, des parfums et des sourires, des lits moelleux installés face aux toits parisiens et des massages holistiques, des épices levantines et des bonbons d’antan, nous mettons tout en œuvre pour que le voyage soit une épopée qui laisse une trace. Quel autre sens pourrait-on donner à notre métier d’hôtelier, si ce n’est celui d’offrir un chapitre d’histoire à chaque passage ?”",
+        "textmobile1":"Des hôtels et des histoires "
+      }
+    },
+    
+    "hotels":{
+      "en":{
+        "hana":{
+          "nom":"HÔTEL HANA *****",
+          "adresse":"17, rue du Quatre-Septembre, Paris 2",
+          "titre":"Cocon Nippon",
+          "texte":"Cocon Nippon Quand le raffinement japonais rencontre l’élégance de la Belle Époque, éclot l’Hôtel Hana, la petite fleur dont il porte le nom."
+        },
+        "antibes":{
+          "nom":"CAP D’ANTIBES BEACH HOTEL *****",
+          "adresse":"10, boulevard Maréchal Juin, Cap d’Antibes",
+          "titre":"hôtel de la plage",
+          "texte":"La peau salée, vous vous endormez avec le bruit des vagues, et une certitude. Demain il fera beau."
+        },
+        "laponche":{
+          "nom":"HÔTEL LA PONCHE *****",
+          "adresse":"5, rue des Remparts, Saint-Tropez  ",
+          "titre":"Maison VILLAGE",
+          "texte":"Une crique cachée, un ponton célèbre, une ambiance authentique, une âme immortelle… Bienvenue à La Ponche. "
+        }
+      },
+
+      "fr":{
+        "hana":{
+          "nom":"HÔTEL HANA *****",
+          "adresse":"17, rue du Quatre-Septembre, Paris 2",
+          "titre":"Cocon Nippon",
+          "texte":"Cocon Nippon Quand le raffinement japonais rencontre l’élégance de la Belle Époque, éclot l’Hôtel Hana, la petite fleur dont il porte le nom."
+        },
+        "antibes":{
+          "nom":"CAP D’ANTIBES BEACH HOTEL *****",
+          "adresse":"10, boulevard Maréchal Juin, Cap d’Antibes",
+          "titre":"hôtel de la plage",
+          "texte":"La peau salée, vous vous endormez avec le bruit des vagues, et une certitude. Demain il fera beau."
+        },
+        "laponche":{
+          "nom":"HÔTEL LA PONCHE *****",
+          "adresse":"5, rue des Remparts, Saint-Tropez  ",
+          "titre":"Maison VILLAGE",
+          "texte":"Une crique cachée, un ponton célèbre, une ambiance authentique, une âme immortelle… Bienvenue à La Ponche. "
+        }
       }
     }
   }

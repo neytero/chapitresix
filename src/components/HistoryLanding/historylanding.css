@@ -1,0 +1,67 @@
+.historyContainer{
+    display: flex;
+    background-color: #FEFAF1;
+    padding: 0px 20px 20px;
+    gap: 20px;
+}
+
+.historyContainer .leftPart{
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 20px);
+    justify-content: flex-end;
+    width: 60%;
+}
+
+.historyContainer .leftPart h1,
+.historyContainer .leftPart h2{
+    font-family: 'gustavoreg';
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    font-size: 15px;
+    margin: 0px;
+    margin-bottom: 40px;
+}
+
+.historyContainer .leftPart .firstBlockText,
+.historyContainer .leftPart .secondBlockText{
+   width: 90%;
+   display: flex;
+   flex-direction: column;
+   gap: 40px;
+   margin-bottom: 40px;
+}
+
+.historyContainer .leftPart .firstBlockText p{
+    font-family: 'calsonpro';
+    letter-spacing: 0.03rem;
+    font-size: 17px;
+    line-height: 22px;
+    margin: 0px;
+}
+
+.historyContainer .leftPart .secondBlockText p{
+    font-family: 'calsonproitalic';
+    letter-spacing: 0.03rem;
+    font-size: 17px;
+    line-height: 22px;
+    margin: 0px;
+}
+
+.historyContainer .leftPart img{
+    max-width: 250px;
+    height: auto;
+    width: 100%;
+    align-self: flex-end;
+}
+
+.historyContainer .rightPart{
+    display: flex;
+    width: 40%;
+    align-items: flex-end;
+}
+
+.historyContainer .rightPart img{
+    width: 100%;
+    height: auto;
+}

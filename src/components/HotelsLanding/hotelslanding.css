@@ -1,0 +1,46 @@
+.hotelsLandingContainer{
+    height: 100vh;
+    display: flex;
+    background-color: #FEFAF1;
+    align-items: flex-end;
+    gap: 20px;
+    padding: 0px 20px 20px;
+}
+
+.hotelsLandingContainer .feuillet{
+    position: relative;
+    display: grid;
+    flex-direction: column;
+    height: calc(100% - 99px);
+    width: calc(100% / 3);
+}
+.hotelsLandingContainer .feuillet .title{
+    font-family: 'gustavo';
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    font-size: 15px;
+    margin: 0px;
+}
+
+.hotelsLandingContainer .feuillet .adress{
+    font-family: 'calsonproitalic';
+    font-size: 17px;
+    letter-spacing: 0.03rem;
+    line-height: 15px;
+    font-style: italic;
+    margin: 0px;
+}
+
+.hotelsLandingContainer .feuillet .bottom{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #FEFAF1;
+    width: 70%;
+}
+
+.hotelsLandingContainer .feuillet img{
+    width: 100%;
+    height: auto;
+    align-self: flex-end;
+}
