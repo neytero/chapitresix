@@ -7,6 +7,7 @@ import IMAGE2 from '../../assets/Hotels/Cap.jpg';
 import IMAGE3 from '../../assets/Hotels/LaPonche.jpg';
 
 
+
 const HotelsLanding = () => {
   return (
     <div className='hotelsLandingContainer'>
@@ -48,7 +49,6 @@ const HotelsLanding = () => {
                 <p>Voyager</p>
             </div>
         </div>
-
     </div>
   );
 };

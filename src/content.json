@@ -103,7 +103,26 @@
           "adresse":"5, rue des Remparts, Saint-Tropez  ",
           "titre":"Maison VILLAGE",
           "texte":"Une crique cachée, un ponton célèbre, une ambiance authentique, une âme immortelle… Bienvenue à La Ponche. "
+        },
+        "aristide":{
+          "nom":"MONSIEUR ARISTIDE ****",
+          "adresse":"3, rue Aristide Bruant, Paris 18",
+          "titre":"Maison bohème",
+          "texte":"Montmartre en ce temps-là accrochait ses lilas jusque sous nos fenêtres. Ici le temps s’arrête, la joie de vivre éclate."
+        },
+        "academie":{
+          "nom":"HÔTEL DES ACADÉMIES ET DES ARTS ****",
+          "adresse":"15, rue de la Grande Chaumière, Paris 6",
+          "titre":"Atelier d’artistes",
+          "texte":"Créer, accrocher, peindre, exposer, modeler, dessiner… Voyageur ou artiste, chambre ou chevalet, installez vous."
+        },
+        "chalet":{
+          "nom":"CHALET SAINT-GEORGES ****",
+          "adresse":"159, rue Mgr Conseil, Megève",
+          "titre":"Refuge intime tyrolien ",
+          "texte":"Un chalet mégevan entièrement réinventé, coloré et atypique, idéal pour se ressourcer été comme hiver."
         }
+
       },
 
       "fr":{
@@ -124,6 +143,24 @@
           "adresse":"5, rue des Remparts, Saint-Tropez  ",
           "titre":"Maison VILLAGE",
           "texte":"Une crique cachée, un ponton célèbre, une ambiance authentique, une âme immortelle… Bienvenue à La Ponche. "
+        },
+        "aristide":{
+          "nom":"MONSIEUR ARISTIDE ****",
+          "adresse":"3, rue Aristide Bruant, Paris 18",
+          "titre":"Maison bohème",
+          "texte":"Montmartre en ce temps-là accrochait ses lilas jusque sous nos fenêtres. Ici le temps s’arrête, la joie de vivre éclate."
+        },
+        "academie":{
+          "nom":"HÔTEL DES ACADÉMIES ET DES ARTS ****",
+          "adresse":"15, rue de la Grande Chaumière, Paris 6",
+          "titre":"Atelier d’artistes",
+          "texte":"Créer, accrocher, peindre, exposer, modeler, dessiner… Voyageur ou artiste, chambre ou chevalet, installez vous."
+        },
+        "chalet":{
+          "nom":"CHALET SAINT-GEORGES ****",
+          "adresse":"159, rue Mgr Conseil, Megève",
+          "titre":"Refuge intime tyrolien ",
+          "texte":"Un chalet mégevan entièrement réinventé, coloré et atypique, idéal pour se ressourcer été comme hiver."
         }
       }
     }
