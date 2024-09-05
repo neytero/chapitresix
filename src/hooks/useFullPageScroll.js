@@ -10,7 +10,6 @@ const useFullPageScroll = (setTransparent, setCurrentSection) => {
     if (totalSections === 0) return;
 
     let touchStartY = 0;
-    let touchEndY = 0;
 
     const updateSectionClasses = () => {
       sections.forEach((section, index) => {
@@ -29,10 +28,15 @@ const useFullPageScroll = (setTransparent, setCurrentSection) => {
       setTransparent(currentSectionIndex === totalSections - 1 ? 1 : 0);
     };
 
-    const handleScroll = (deltaY) => {
+    const handleScroll = (deltaY, isTouch) => {
       if (isScrolling) return;
 
       const SCROLL_THRESHOLD = 20;
+
+      // Adjust the direction for touch events
+      if (isTouch) {
+        deltaY = -deltaY;
+      }
 
       if (Math.abs(deltaY) >= SCROLL_THRESHOLD) {
         isScrolling = true;
@@ -53,31 +57,36 @@ const useFullPageScroll = (setTransparent, setCurrentSection) => {
 
     const scrollHandler = (event) => {
       event.preventDefault();
-      handleScroll(event.deltaY);
+      handleScroll(event.deltaY, false);
     };
 
     const touchStartHandler = (event) => {
       touchStartY = event.touches[0].clientY;
     };
 
-    const touchEndHandler = (event) => {
-      touchEndY = event.changedTouches[0].clientY;
-      const SCROLL_THRESHOLD = 30;
-
-      if (Math.abs(touchEndY - touchStartY) >= SCROLL_THRESHOLD) {
-        handleScroll(touchEndY - touchStartY);
+    const touchMoveHandler = (event) => {
+      if (touchStartY !== 0) {
+        const touchEndY = event.touches[0].clientY;
+        handleScroll(touchEndY - touchStartY, true);
+        touchStartY = touchEndY; // Update touchStartY for the next move
       }
     };
 
+    const touchEndHandler = () => {
+      touchStartY = 0; // Reset touchStartY
+    };
+
     window.addEventListener('wheel', scrollHandler);
-    window.addEventListener('touchstart', touchStartHandler);
-    window.addEventListener('touchend', touchEndHandler);
+    window.addEventListener('touchstart', touchStartHandler, { passive: true });
+    window.addEventListener('touchmove', touchMoveHandler, { passive: false });
+    window.addEventListener('touchend', touchEndHandler, { passive: true });
 
     updateSectionClasses();
 
     return () => {
       window.removeEventListener('wheel', scrollHandler);
       window.removeEventListener('touchstart', touchStartHandler);
+      window.removeEventListener('touchmove', touchMoveHandler);
       window.removeEventListener('touchend', touchEndHandler);
     };
   }, [setTransparent, setCurrentSection]);

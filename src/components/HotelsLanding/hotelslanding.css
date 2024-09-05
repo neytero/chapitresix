@@ -14,7 +14,7 @@
     height: calc(100% - 99px);
     width: calc(100% / 3);
 }
-.hotelsLandingContainer .feuillet .title{
+.hotelsContainer .feuillet .title{
     font-family: 'gustavo';
     text-transform: uppercase;
     letter-spacing: 0.05rem;
