@@ -34,7 +34,7 @@
     text-transform: uppercase;
     letter-spacing: 0.05rem;
     font-size: 14px;
-    margin-bottom: 35px;
+    margin-bottom: 24px;
     
 }
 
@@ -44,6 +44,7 @@
     font-size: 16px;
     line-height: 22px;
     text-align: justify;
+    margin: 10px 0px;
 }
 
 

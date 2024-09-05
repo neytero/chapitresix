@@ -9,7 +9,7 @@
 .section3LandingMobile .textContainer{
     display: flex;
     flex-direction: column;
-    gap: 35px;
+    gap: 30px;
 }
 
 .section3LandingMobile .textContainer p{
@@ -31,7 +31,7 @@
 }
 
 .section3LandingMobile .imgMobile{
-    width: 54%;
+    width: 50%;
     height: auto;
     margin: auto;
 }

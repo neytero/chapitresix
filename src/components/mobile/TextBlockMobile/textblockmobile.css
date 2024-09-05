@@ -19,7 +19,7 @@
     line-height: 18px;
     margin: 0px;
     text-align: justify;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .section2LandingMobile .textContainer .title{
@@ -33,7 +33,7 @@
 }
 
 .section2LandingMobile .imgMobile{
-    width: 60%;
+    width: 50%;
     height: auto;
     align-self: flex-end;
 }
