@@ -1,10 +1,11 @@
 .historySectionTexte {
-    height: 100vh;
+    height: calc(100vh - 100px);
     padding: 100px 10px 0px;
     background-color: #FEFAF1;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    justify-content: space-between;
 }
 
 .historySectionTexte h1{
@@ -29,4 +30,5 @@
 
 .historySectionTexte .imgContainer{
     align-self: flex-end;
+    margin-bottom: 70px;
 }

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const useFullPageScroll = () => {
+const useFullPageScroll = (setTransparent, setCurrentSection) => {
   useEffect(() => {
     let currentSectionIndex = 0;
     const sections = document.querySelectorAll('.section');
@@ -9,37 +9,51 @@ const useFullPageScroll = () => {
 
     if (totalSections === 0) return;
 
-    
     let touchStartY = 0;
     let touchEndY = 0;
 
-    const scrollHandler = (event) => {
-      event.preventDefault();
+    const updateSectionClasses = () => {
+      sections.forEach((section, index) => {
+        if (index === currentSectionIndex) {
+          section.classList.add('active', 'fixed');
+        } else {
+          section.classList.remove('active');
+          if (index < currentSectionIndex) {
+            section.classList.add('fixed');
+          } else {
+            section.classList.remove('fixed');
+          }
+        }
+      });
+      setCurrentSection(currentSectionIndex);
+      setTransparent(currentSectionIndex === totalSections - 1 ? 1 : 0);
+    };
 
+    const handleScroll = (deltaY) => {
       if (isScrolling) return;
 
-      
       const SCROLL_THRESHOLD = 20;
 
-      if (event.deltaY && Math.abs(event.deltaY) >= SCROLL_THRESHOLD) {
+      if (Math.abs(deltaY) >= SCROLL_THRESHOLD) {
         isScrolling = true;
-        if (event.deltaY > 0 && currentSectionIndex < totalSections - 1) {
-          
-          sections[currentSectionIndex].classList.remove('active');
-          sections[currentSectionIndex].classList.add('fixed');
+
+        if (deltaY > 0 && currentSectionIndex < totalSections - 1) {
           currentSectionIndex++;
-          sections[currentSectionIndex].classList.add('active');
-        } else if (event.deltaY < 0 && currentSectionIndex > 0) {
-         
-          sections[currentSectionIndex].classList.remove('active');
-          sections[currentSectionIndex].classList.remove('fixed');
+        } else if (deltaY < 0 && currentSectionIndex > 0) {
           currentSectionIndex--;
-          sections[currentSectionIndex].classList.add('active');
         }
+
+        updateSectionClasses();
+
         setTimeout(() => {
           isScrolling = false;
         }, 600);
       }
+    };
+
+    const scrollHandler = (event) => {
+      event.preventDefault();
+      handleScroll(event.deltaY);
     };
 
     const touchStartHandler = (event) => {
@@ -51,22 +65,7 @@ const useFullPageScroll = () => {
       const SCROLL_THRESHOLD = 30;
 
       if (Math.abs(touchEndY - touchStartY) >= SCROLL_THRESHOLD) {
-        isScrolling = true;
-        if (touchEndY > touchStartY && currentSectionIndex > 0) {
-         
-          sections[currentSectionIndex].classList.remove('active');
-          sections[currentSectionIndex].classList.remove('fixed');
-          currentSectionIndex--;
-          sections[currentSectionIndex].classList.add('active');
-        } else if (touchEndY < touchStartY && currentSectionIndex < totalSections - 1) {
-          sections[currentSectionIndex].classList.remove('active');
-          sections[currentSectionIndex].classList.add('fixed');
-          currentSectionIndex++;
-          sections[currentSectionIndex].classList.add('active');
-        }
-        setTimeout(() => {
-          isScrolling = false;
-        }, 600);
+        handleScroll(touchEndY - touchStartY);
       }
     };
 
@@ -74,14 +73,14 @@ const useFullPageScroll = () => {
     window.addEventListener('touchstart', touchStartHandler);
     window.addEventListener('touchend', touchEndHandler);
 
-    sections[currentSectionIndex].classList.add('active');
+    updateSectionClasses();
 
     return () => {
       window.removeEventListener('wheel', scrollHandler);
       window.removeEventListener('touchstart', touchStartHandler);
       window.removeEventListener('touchend', touchEndHandler);
     };
-  }, []);
+  }, [setTransparent, setCurrentSection]);
 };
 
 export default useFullPageScroll;

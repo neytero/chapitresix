@@ -7,7 +7,6 @@ const HistoryLanding = () => {
     <div className='historyLandingMobile'>
         <h1>{content.history.fr.title1}</h1>
         <p>{content.history.fr.text1}</p>
-        <p>{content.history.fr.text2}</p>
     </div>
   );
 };

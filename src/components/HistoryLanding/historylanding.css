@@ -1,6 +1,12 @@
-.historyContainer{
+.superContainer{
+    height: 100vh;
     display: flex;
+    align-items: flex-end;
     background-color: #FEFAF1;
+}
+
+.historyContainer{
+    display: flex;   
     padding: 0px 20px 20px;
     gap: 20px;
 }
@@ -8,8 +14,7 @@
 .historyContainer .leftPart{
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 20px);
-    justify-content: flex-end;
+    justify-content: space-between;
     width: 60%;
 }
 
@@ -18,7 +23,7 @@
     font-family: 'gustavoreg';
     text-transform: uppercase;
     letter-spacing: 0.05rem;
-    font-size: 15px;
+    font-size: 14px;
     margin: 0px;
     margin-bottom: 40px;
 }
@@ -35,7 +40,7 @@
 .historyContainer .leftPart .firstBlockText p{
     font-family: 'calsonpro';
     letter-spacing: 0.03rem;
-    font-size: 17px;
+    font-size: 16px;
     line-height: 22px;
     margin: 0px;
 }
@@ -43,15 +48,14 @@
 .historyContainer .leftPart .secondBlockText p{
     font-family: 'calsonproitalic';
     letter-spacing: 0.03rem;
-    font-size: 17px;
+    font-size: 16px;
     line-height: 22px;
     margin: 0px;
 }
 
 .historyContainer .leftPart img{
-    max-width: 250px;
     height: auto;
-    width: 100%;
+    width: 18%;
     align-self: flex-end;
 }
 

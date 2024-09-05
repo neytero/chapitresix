@@ -33,7 +33,7 @@
     font-family:'gustavoreg';
     text-transform: uppercase;
     letter-spacing: 0.05rem;
-    font-size: 15px;
+    font-size: 14px;
     margin-bottom: 35px;
     
 }
@@ -41,7 +41,7 @@
 .containerTextblock p{
     font-family: 'calsonpro';
     letter-spacing: 0.03rem;
-    font-size: 17px;
+    font-size: 16px;
     line-height: 22px;
     text-align: justify;
 }

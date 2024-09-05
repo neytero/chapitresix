@@ -62,12 +62,10 @@ const Navbar = ({ changePage, changeLanguage, isTransparent }) => {
             <p className="hotel" onClick={toggleHotelList}>{content.home.fr.landing.submenu1}</p>
             {showHotelList && (
               <div className="hotellist">
-                {/* Liste des hôtels */}
                 <div className="hotelLink">
                   <Link to="">Hôtel Hana, Paris 2</Link>
                   <img src={FLECHE} alt="" />
                 </div>
-                {/* Ajouter d'autres hôtels ici */}
               </div>
             )}
             <Link to="/history" onClick={() => closeMenuAndChangePage('history')}>{content.home.fr.landing.submenu2}</Link>

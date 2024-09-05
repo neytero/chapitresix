@@ -11,8 +11,6 @@ import useFullPageScroll from './hooks/useFullPageScroll';
 import BookingButton from './components/BookingButton/bookingButton';
 
 const App = () => {
-  useFullPageScroll();
-
   const [language, setLanguage] = useState('en');
   const [contentState, setContentState] = useState({
     home: { landing: {}, textBlock: {}, other: {} },
@@ -21,7 +19,8 @@ const App = () => {
   });
   const [buttonVisibility, setButtonVisibility] = useState('show');
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
-  const [isLandingPage, setIsLandingPage] = useState(false);
+  const [transparent, setTransparent] = useState(0);
+  const [currentSection, setCurrentSection] = useState(0);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 1024);
@@ -33,14 +32,12 @@ const App = () => {
     const initialPage = window.location.pathname.includes('history') ? 'history' : 'home';
     if (contentState[language] && contentState[language][initialPage]) {
       setContentState(contentState[language][initialPage]);
-      setIsLandingPage(initialPage === 'home');
     }
   }, [language, contentState]);
 
   const changePage = (page) => {
     window.history.pushState({}, '', `/${page}`);
     setContentState(contentState[language][page] || {});
-    setIsLandingPage(page === 'home');
   };
 
   useEffect(() => {
@@ -69,15 +66,17 @@ const App = () => {
     };
   }, []);
 
+  useFullPageScroll(setTransparent, setCurrentSection);
+
   return (
     <Router>
       <Navbar
         changePage={changePage}
         changeLanguage={setLanguage}
-        isTransparent={buttonVisibility === 'hidden'}
+        isTransparent={transparent}
       />
       <Routes>
-        <Route path="/" element={<HomePage content={contentState} />} />
+        <Route path="/" element={<HomePage content={contentState.home} />} />
         <Route path="/history" element={<HistoryPage content={contentState.history} />} />
         <Route path="/les-hotels" element={<Hotels content={contentState.history} />} />
       </Routes>
@@ -91,8 +90,8 @@ const App = () => {
         </footer>
       )}
       {buttonVisibility && (
-        <BookingButton 
-          className={`reserve-button ${buttonVisibility} ${isLandingPage ? 'landing' : ''}`}
+        <BookingButton
+          className={`reserve-button ${buttonVisibility} ${currentSection === 0 ? 'landing' : ''}`}
         />
       )}
     </Router>

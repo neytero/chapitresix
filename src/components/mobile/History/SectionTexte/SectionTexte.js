@@ -8,8 +8,8 @@ const SectionTexte = () => {
     <div className='historySectionTexte'>
         <div className='textContainer'>
         <h1>{content.history.fr.title2}</h1>
-        <p>{content.history.fr.text3}</p>
-        <p>{content.history.fr.text4}</p>
+        <p>{content.history.fr.textmobile2}</p>
+        <p>{content.history.fr.textmobile3}</p>
         </div>
         <div className='imgContainer'>
             <img src={SMALLIMG} alt="" />
