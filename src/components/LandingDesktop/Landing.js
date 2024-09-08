@@ -1,52 +1,55 @@
-import React, { useState, useRef, useEffect } from 'react';
-import LANDINGVIDEO from '../../assets/VIDEO_DESKTOP.mp4';
-import LANDINGVIDEOMOBILE from '../../assets/VIDEO_MOBILE.mov';
+import React, {/*{ useState, useRef, useEffect }*/} from 'react';
+
+// import LANDINGVIDEO from '../../assets/VIDEO_DESKTOP.mp4';
+// import LANDINGVIDEOMOBILE from '../../assets/VIDEO_MOBILE.mov';
+import IMAGEDESKTOP from '../../assets/Home/landing.jpg'
+import IMAGEMOBILE from '../../assets/Home/landingmobile.jpg'
 import '../LandingDesktop/landing.css';
-import VOLUMEON from '../../assets/VOLUME_ON.svg';
-import VOLUMEOFF from '../../assets/VOLUME_OFF.svg';
+// import VOLUMEON from '../../assets/VOLUME_ON.svg';
+// import VOLUMEOFF from '../../assets/VOLUME_OFF.svg';
 
 const Landing = () => {
-  const [volumeOn, setVolumeOn] = useState(false);
-  const videoRefDesktop = useRef(null);
-  const videoRefMobile = useRef(null);
+  // const [volumeOn, setVolumeOn] = useState(false);
+  // const videoRefDesktop = useRef(null);
+  // const videoRefMobile = useRef(null);
 
-  const toggleVolume = () => {
-    setVolumeOn(prevVolumeOn => {
-      const newVolumeOn = !prevVolumeOn;
-      if (videoRefDesktop.current) {
-        videoRefDesktop.current.muted = !newVolumeOn;
-      }
-      if (videoRefMobile.current) {
-        videoRefMobile.current.muted = !newVolumeOn;
-      }
-      return newVolumeOn;
-    });
-  };
+  // const toggleVolume = () => {
+  //   setVolumeOn(prevVolumeOn => {
+  //     const newVolumeOn = !prevVolumeOn;
+  //     if (videoRefDesktop.current) {
+  //       videoRefDesktop.current.muted = !newVolumeOn;
+  //     }
+  //     if (videoRefMobile.current) {
+  //       videoRefMobile.current.muted = !newVolumeOn;
+  //     }
+  //     return newVolumeOn;
+  //   });
+  // };
 
-  useEffect(() => {
-    const playVideo = async () => {
-      if (videoRefDesktop.current) {
-        try {
-          await videoRefDesktop.current.play();
-        } catch (error) {
-          console.error('Failed to play desktop video', error);
-        }
-      }
-      if (videoRefMobile.current) {
-        try {
-          await videoRefMobile.current.play();
-        } catch (error) {
-          console.error('Failed to play mobile video', error);
-        }
-      }
-    };
+  // useEffect(() => {
+  //   const playVideo = async () => {
+  //     if (videoRefDesktop.current) {
+  //       try {
+  //         await videoRefDesktop.current.play();
+  //       } catch (error) {
+  //         console.error('Failed to play desktop video', error);
+  //       }
+  //     }
+  //     if (videoRefMobile.current) {
+  //       try {
+  //         await videoRefMobile.current.play();
+  //       } catch (error) {
+  //         console.error('Failed to play mobile video', error);
+  //       }
+  //     }
+  //   };
 
-    playVideo();
-  }, []);
+  //   playVideo();
+  // }, []);
 
   return (
     <div className='container'>
-      <video
+      {/* <video
         className='imgLandingDesktop'
         src={LANDINGVIDEO}
         autoPlay
@@ -71,17 +74,19 @@ const Landing = () => {
         preload="auto"
       >
         Votre navigateur ne supporte pas la balise vidéo.
-      </video>
+      </video> */}
 
+      <img src={IMAGEDESKTOP} alt="" className='imgLandingDesktop' />
+      <img src={IMAGEMOBILE} alt="" className='imgLandingMobile' />
       <p className='citation'>“Comme à la maison, on regarde, on vit, on revient.”</p>
       
-      <div className='volume-controls' onClick={toggleVolume}>
+      {/*<div className='volume-controls' onClick={toggleVolume}>
         <img
           className='volume-icon'
           src={volumeOn ? VOLUMEON : VOLUMEOFF}
           alt={volumeOn ? 'Volume On' : 'Volume Off'}
         />
-      </div>
+      </div>*/}
     </div>
   );
 };

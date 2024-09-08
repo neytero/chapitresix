@@ -2,7 +2,7 @@ import React from 'react';
 import './historylanding.css';
 import content from '../../content.json';
 import SMALLIMG from '../../assets/History/small.jpg'
-import BIGIMG from '../../assets/History/big.jpg'
+import BIGIMG from '../../assets/History/big.gif'
 
 const HistoryLanding = () => {
   return (

@@ -1,25 +1,30 @@
-/* TextBlock.css */
+.ultraContainerTextBlock {
+    background-color: #FEFAF1;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+}
+
 .text-block {
     width: calc(100% - 40px);
-    height: calc(100vh - 150px);
+    height: fit-content;
     display: flex;
     background-color: #FEFAF1;
-    padding: 130px 20px 20px 20px;
+    padding: 0px 20px 20px 20px;
 }
-.bigContainerTextblock{
+
+.bigContainerTextblock {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 68%;
 }
 
-
-
-.bigContainerTextblock:hover{
+.bigContainerTextblock:hover {
     cursor: pointer;
 }
 
-.containerTextblock{
+.containerTextblock {
     width: 77%;
     display: flex;
     flex-direction: column;
@@ -29,16 +34,15 @@
     cursor: pointer;
 }
 
-.containerTextblock h2{
-    font-family:'gustavoreg';
+.containerTextblock h2 {
+    font-family: 'gustavoreg';
     text-transform: uppercase;
     letter-spacing: 0.05rem;
     font-size: 14px;
     margin-bottom: 24px;
-    
 }
 
-.containerTextblock p{
+.containerTextblock p {
     font-family: 'calsonpro';
     letter-spacing: 0.03rem;
     font-size: 16px;
@@ -47,34 +51,34 @@
     margin: 10px 0px;
 }
 
-
-.fixButton{
+.fixButton {
     display: flex;
     flex-direction: column;
 }
-.buttonCarousel{
+
+.buttonCarousel {
     width: 77%;
     display: flex;
     justify-content: flex-end;
 }
 
-.buttonCarousel:hover{
+.buttonCarousel:hover {
     cursor: pointer;
 }
 
-.buttonCarousel p{
+.buttonCarousel p {
     font-family: "calsonbold";
     margin-bottom: 10px;
     margin-top: 0px;
 }
+
 .carousel {
     position: relative;
-    width: 105%;
-    height: 250px; /* Ajuste selon la taille de tes images */
-    
+    width: 100%;
+    height: 305px; /* Ajuste selon la taille de tes images */
     overflow-x: hidden;
 }
-  
+
 .carousel-image {
     position: absolute;
     bottom: 0;
@@ -86,13 +90,12 @@
     margin-right: 20px; /* Ajoute une marge entre les images */
 }
 
-  
 .position-0 {
     left: 0;
     z-index: 5;
     transition-duration: 500ms;
 }
-  
+
 .position-1 {
     transform: translateX(calc(100% + 20px));
     z-index: 4;
@@ -116,7 +119,6 @@
     z-index: 1;
     transition-duration: 500ms;
 }
-
 
 /* Nouvelle classe pour position-5 */
 .position-5 {
@@ -142,25 +144,53 @@
     transition-duration: 500ms;
 }
 
+.test {
+    width: 93%;
+    display: flex;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    justify-content: space-between;
+}
 
 .carousselSecond {
     position: relative;
     width: 40%;
+    min-height: 300px; /* Valeur initiale, ajuste si nécessaire */
+    display: flex;
+    flex-direction: column;
+}
+
+.carousselSecond .image-wrapper {
+    position: absolute;
+    width: 100%;
     height: auto;
-    margin-top: 20px;
-  }
-  .carousselSecond  .adressesHotels{
+    bottom: 0;
+}
+
+.second-carousel-image {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    max-width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+}
+
+.second-carousel-image.visible {
+    opacity: 1;
+}
+
+.adressesHotels {
     font-family: "calsonpro";
     color: white;
     letter-spacing: 0.06rem;
     font-size: 16px;
-    position: absolute;
     margin: 0px;
-    bottom: 20px;
-    left: 120px;
-  }
+}
 
-  .trip{
+.trip {
     font-family: "gustavo";
     color: white;
     font-size: 14px;
@@ -168,28 +198,28 @@
     letter-spacing: 0.03rem;
     border-bottom: 1px solid white;
     margin: 0px;
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-  }
+}
 
-  .second-carousel-image {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    max-width: 87%;
-    height: auto;
-    opacity: 0;
-    transition: opacity 500ms ease-in-out;
-  }
-  
-  .second-carousel-image.visible {
-    opacity: 1;
-  }
-
-  @media screen and (max-width: 1550px){
-    .second-carousel-image{
-        max-width: 92%;
+@media screen and (max-width: 1600px) {
+    .carousel {
+        height: 250px;
     }
-  }
-  
+}
+
+@media screen and (max-width: 1875px) {
+    .carousel {
+        height: 288px;
+    }
+}
+
+@media screen and (max-width: 1800px) {
+    .carousel {
+        height: 275px;
+    }
+}
+
+@media screen and (max-width: 1700px) {
+    .carousel {
+        height: 258px;
+    }
+}

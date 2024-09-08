@@ -29,10 +29,23 @@
     opacity: 0;
   }
   
+
+  .reserve-button svg{
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+  }
   .reserve-button.landing {
     background-color: transparent;
     color: white;
     border-top: 1px solid white;
+  }
+  
+
+  .reserve-button.landing svg{
+    opacity: 1;
   }
   
   .reserve-button.hidden {

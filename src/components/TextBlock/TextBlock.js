@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../TextBlock/textblock.css';
 import content from '../../content.json';
 
@@ -62,8 +62,8 @@ const hotelAddresses = [
   "Monsieur George, Paris 8",
   "Maison Saintonge, Paris 3",
   "Hôtel La Ponche, Saint-Tropez",
-  "Monsieur George, Paris 8 ",
-  "Cap d’Antibes Beach Hotel, Cap d’Antibes ",
+  "Monsieur George, Paris 8",
+  "Cap d’Antibes Beach Hotel, Cap d’Antibes",
   "Hôtel Hana, Paris 2",
   "Monsieur Aristide, Paris 18",
   "Monsieur Cadet, Paris 9",
@@ -71,59 +71,99 @@ const hotelAddresses = [
 
 const TextBlock = ({ transitionDuration = 500 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const carousselSecondRef = useRef(null);
+
+  // Function to calculate and set the maximum height
+  const updateCarouselHeight = () => {
+    if (carousselSecondRef.current) {
+      const images2 = carousselSecondRef.current.querySelectorAll('.second-carousel-image');
+      let maxHeight = 0;
+
+      images2.forEach(img => {
+        if (img.complete) {
+          maxHeight = Math.max(maxHeight, img.clientHeight);
+        } else {
+          img.onload = () => {
+            maxHeight = Math.max(maxHeight, img.clientHeight);
+            carousselSecondRef.current.style.height = `${maxHeight}px`;
+          };
+        }
+      });
+
+      carousselSecondRef.current.style.height = `${maxHeight}px`;
+    }
+  };
+
+  useEffect(() => {
+    updateCarouselHeight(); // Initial call to set the height
+    window.addEventListener('resize', updateCarouselHeight); // Update height on resize
+
+    return () => window.removeEventListener('resize', updateCarouselHeight); // Cleanup
+  }, [currentIndex]);
+
+  useEffect(() => {
+    // Ensure height is correctly set on initial render
+    updateCarouselHeight();
+  }, []);
 
   const handleContainerClick = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setCurrentIndex(prevIndex => (prevIndex + 1) % images.length);
   };
 
   return (
-    <div className="text-block">
-      <div className='bigContainerTextblock' onClick={handleContainerClick}>
-        <div className="containerTextblock">
-          <h2>{content.home.fr.textBlock.title}</h2>
-          <p>{content.home.fr.textBlock.text1}</p>
-          <p>{content.home.fr.textBlock.text2}</p>
-          <p>{content.home.fr.textBlock.text3}</p>
-        </div>
-        <div className='fixButton'>
-          <div className='buttonCarousel'>
-            <p>Cliquer pour voyager</p>
+    <div className='ultraContainerTextBlock'>
+      <div className="text-block">
+        <div className='bigContainerTextblock' onClick={handleContainerClick}>
+          <div className="containerTextblock">
+            <h2>{content.home.fr.textBlock.title}</h2>
+            <p>{content.home.fr.textBlock.text1}</p>
+            <p>{content.home.fr.textBlock.text2}</p>
+            <p>{content.home.fr.textBlock.text3}</p>
           </div>
-          <div className="carousel">
-            {images.map((image, index) => {
-              const position = (currentIndex - index + images.length) % images.length;
-              const isVisible = position < 5;
-              return (
-                <img
-                  key={index}
-                  src={image}
-                  alt=""
-                  className={`carousel-image position-${position}`}
-                  style={{
-                    opacity: isVisible ? 1 : 0,
-                    transitionDuration: `${transitionDuration}ms`,
-                  }}
-                />
-              );
-            })}
+          <div className='fixButton'>
+            <div className='buttonCarousel'>
+              <p>Cliquer pour voyager</p>
+            </div>
+            <div className="carousel">
+              {images.map((image, index) => {
+                const position = (currentIndex - index + images.length) % images.length;
+                const isVisible = position < 5;
+                return (
+                  <img
+                    key={index}
+                    src={image}
+                    alt=""
+                    className={`carousel-image position-${position}`}
+                    style={{
+                      opacity: isVisible ? 1 : 0,
+                      transitionDuration: `${transitionDuration}ms`,
+                    }}
+                  />
+                );
+              })}
+            </div>
           </div>
         </div>
-      </div>
-      <div className="carousselSecond">
-        {images2.map((image, index) => (
-          <img
-            key={index}
-            src={image}
-            alt=""
-            className={`second-carousel-image ${index === currentIndex ? 'visible' : ''}`}
-            style={{
-              opacity: index === currentIndex ? 1 : 0,
-              transition: `opacity ${transitionDuration}ms ease-in-out`,
-            }}
-          />
-        ))}
-        <p className='trip'>Voyager</p>
-        <p className='adressesHotels'>{hotelAddresses[currentIndex]}</p>
+        <div className="carousselSecond" ref={carousselSecondRef}>
+          <div className='image-wrapper'>
+            {images2.map((image, index) => (
+              <img
+                key={index}
+                src={image}
+                alt=""
+                className={`second-carousel-image ${index === currentIndex ? 'visible' : ''}`}
+                style={{
+                  opacity: index === currentIndex ? 1 : 0,
+                  transition: `opacity ${transitionDuration}ms ease-in-out`,
+                }}
+              />
+            ))}
+          </div>
+          <div className='test'>
+            <p className='adressesHotels'>{hotelAddresses[currentIndex]}</p>
+            <p className='trip'>Voyager</p>
+          </div>
+        </div>
       </div>
     </div>
   );
