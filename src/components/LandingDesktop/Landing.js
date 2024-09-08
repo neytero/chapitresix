@@ -75,8 +75,10 @@ const Landing = () => {
       >
         Votre navigateur ne supporte pas la balise vidéo.
       </video> */}
-
-      <img src={IMAGEDESKTOP} alt="" className='imgLandingDesktop' />
+      <div className='containerLanding'>
+        <img src={IMAGEDESKTOP} alt="" className='imgLandingDesktop' />
+      </div>
+      
       <img src={IMAGEMOBILE} alt="" className='imgLandingMobile' />
       <p className='citation'>“Comme à la maison, on regarde, on vit, on revient.”</p>
       

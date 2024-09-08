@@ -7,6 +7,13 @@
 
 }
 
+.containerLanding{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
 .container .imgLandingDesktop{
     width: calc(100% - 40px);
     height: auto;
