@@ -167,6 +167,67 @@
           "texte":"Un chalet mégevan entièrement réinventé, coloré et atypique, idéal pour se ressourcer été comme hiver."
         }
       }
-    }
+    },
+
+    "actualites":{
+      "en":{
+        "bloctext":{
+          "title": "LES ACTUALITÉS",
+          "text": "Dans les mots Chapitre Six, on entend Hôtels, et on entend Histoires. Raison pour laquelle, chaque jour, nous faisons vivre celles-ci dans nos hôtels. Comme dans une maison de famille, il s’y passe toujours quelque chose. Nous sommes heureux de partager cette vie joyeuse avec vous.",
+          "subtext": "Au jour le jour, suivez nos aventures sur Instagram."
+        },
+
+        "actualite1":{
+          "titre":"Prix littéraire 2024, hôtel la ponche*****",
+          "date":"Mai 2024",
+          "texte":"L’Hôtel La Ponche a rendu hommage au nouveau gagnant de son Prix Littéraire. Ode à une vie romantique et voyageuse, le roman-poème « LOption Légère » de Victor Pouchet, publié chez Gallimard, remporte le Prix La Ponche 2024.",
+          "class": "ailleurs"
+        },
+
+        "actualite2":{
+          "titre":"COMEDY CLUB, MONSIEUR CADET****",
+          "date":"Mai 2024",
+          "texte":"Si une forte envie de rire et de retrouver une ambiance parisienne légère et joyeuse vous (sur)prend, parrticipez aux soirées du Comedy Club chez Monsieur Cadet !",
+          "class": "paris"
+        },
+
+        "actualite3":{
+          "titre":"COME BABA WITH US, RESTAURANT BABA*****",
+          "date":"Été 2024",
+          "texte":"Parce que c’est l’été et parce qu’on aime danser avec du sable sous les pieds, les Baba Mondays sont lancés ! Entre amis, en solo, en famille ou en amoureux, fêtez vos lundis sur la plage du Cap d’Antibes.",
+          "class": "ailleurs"
+        }
+      },
+
+      "fr":{
+        "bloctext":{
+          "title": "LES ACTUALITÉS",
+          "text": "Dans les mots Chapitre Six, on entend Hôtels, et on entend Histoires. Raison pour laquelle, chaque jour, nous faisons vivre celles-ci dans nos hôtels. Comme dans une maison de famille, il s’y passe toujours quelque chose. Nous sommes heureux de partager cette vie joyeuse avec vous.",
+          "subtext": "Au jour le jour, suivez nos aventures sur Instagram."
+        },
+
+        "actualite1":{
+          "titre":"Prix littéraire 2024, hôtel la ponche*****",
+          "date":"Mai 2024",
+          "texte":"L’Hôtel La Ponche a rendu hommage au nouveau gagnant de son Prix Littéraire. Ode à une vie romantique et voyageuse, le roman-poème « LOption Légère » de Victor Pouchet, publié chez Gallimard, remporte le Prix La Ponche 2024.",
+          "class": "ailleurs"
+        },
+
+        "actualite2":{
+          "titre":"COMEDY CLUB, MONSIEUR CADET****",
+          "date":"Mai 2024",
+          "texte":"Si une forte envie de rire et de retrouver une ambiance parisienne légère et joyeuse vous (sur)prend, parrticipez aux soirées du Comedy Club chez Monsieur Cadet !",
+          "class": "paris"
+        },
+
+        "actualite3":{
+          "titre":"COME BABA WITH US, RESTAURANT BABA*****",
+          "date":"Été 2024",
+          "texte":"Parce que c’est l’été et parce qu’on aime danser avec du sable sous les pieds, les Baba Mondays sont lancés ! Entre amis, en solo, en famille ou en amoureux, fêtez vos lundis sur la plage du Cap d’Antibes.",
+          "class": "ailleurs"
+        }
+      }
+    
   }
+}
   

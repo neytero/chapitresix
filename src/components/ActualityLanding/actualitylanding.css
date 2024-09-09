@@ -1,0 +1,114 @@
+.actualityLandingContainer {
+    height: calc(100vh - 20px);
+    background-color: #FCFAF4;
+    display: flex;
+    align-items: flex-end;
+    padding: 0px 20px 20px;
+}
+
+.actualityLandingSmallContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.actualityLandingContainer .filter{
+    display: flex;
+    justify-content: space-between;
+    width: 15%;
+    position: absolute;
+    top: 135px;
+    left: 50%;
+    z-index: 101;
+    color: black;
+    transform: translateX(-50%);
+}
+
+.actualityLandingContainer .filter p {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px;
+    font-family: 'calsonpro';
+    padding: 0px;
+    margin: 0px;
+    width: fit-content;
+  }
+  
+  .actualityLandingContainer .filter p.active {
+    border-bottom: 1px solid black;
+    font-family: 'calsonproitalic';
+  }
+
+.actualityLandingContainer .subTexte {
+    font-family: 'calsonprobolditalic';
+    text-align: right;
+    margin-top: 24px;
+}
+
+.separateContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+}
+
+.actualityLandingContainer h1,
+.actualityLandingContainer h2 {
+    font-family: 'gustavoreg';
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+.actualityLandingContainer h2 {
+    border-bottom: 1px solid black;
+    width: fit-content;
+    margin-bottom: 10px;
+    direction: rtl;
+}
+
+.actualityLandingContainer p {
+    font-family: 'calsonpro';
+    letter-spacing: 0.03rem;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: left;
+    margin: 10px 0px;
+    width: 80%;
+}
+
+.actualityLandingContainer .date {
+    margin-bottom: 24px;
+    font-family: 'calsonproitalic';
+}
+
+/*.actualityLandingActualiteContainer {
+    height: 20%;
+    overflow: auto;
+    direction: rtl;
+}
+
+/*.actualityLandingActualiteContainer::-webkit-scrollbar {
+    background-color: black;
+    width: 2px; 
+}
+
+.actualityLandingActualiteContainer::-webkit-scrollbar-thumb {
+    background-color: #888; 
+}
+
+.actualityLandingActualiteContainer::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}*/
+
+.actualityLandingContainer img {
+    max-width: 40%;
+}
+
+/*.actualityLandingUniqueContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-left: 10px;
+}*/

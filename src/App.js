@@ -6,6 +6,7 @@ import FooterMobile from './components/mobile/FooterMobile/footerMobile';
 import HomePage from './components/HomePage';
 import HistoryPage from './components/HistoryPage';
 import Hotels from './components/Hotels';
+import Actualites from './components/NosActualites'
 import './App.css';
 import useFullPageScroll from './hooks/useFullPageScroll';
 import BookingButton from './components/BookingButton/bookingButton';
@@ -78,7 +79,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage content={contentState.home} />} />
         <Route path="/history" element={<HistoryPage content={contentState.history} />} />
-        <Route path="/les-hotels" element={<Hotels content={contentState.history} />} />
+        <Route path="/les-hotels" element={<Hotels content={contentState.hotels} />} />
+        <Route path="/nos-actualites" element={<Actualites content={contentState.history} />} />
       </Routes>
       {isMobile ? (
         <footer className="section">
