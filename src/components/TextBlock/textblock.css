@@ -176,7 +176,7 @@
     height: auto;
     opacity: 0;
     transition: opacity 500ms ease-in-out;
-    height: 750px;
+    height: auto;
 }
 
 .second-carousel-image.visible {
