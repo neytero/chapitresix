@@ -1,0 +1,83 @@
+
+
+.landingMobileActu {
+    width: 100%;
+    height: 100vh;
+    background-color: #FCFAF4;
+    position: relative;
+    overflow: hidden; /* Assure-toi que les images ne débordent pas */
+}
+
+.mobileActuBigContainer{
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+}
+
+.slider-text{
+    margin: 0px 10px;
+    height: 259px;
+}
+
+
+.mobileActuBigContainer h1,
+.mobileActuBigContainer h2{
+    text-decoration: none;
+    color: black;
+    font-family: 'gustavo';
+    text-transform: uppercase;
+    letter-spacing: 0.03rem;
+    font-size: 15px;
+    margin: 0px;
+}
+
+.mobileActuBigContainer h2{
+    margin: 25px 0px;
+}
+
+.mobileActuBigContainer p{
+    font-family: 'calsonpro';
+    font-size: 15px;
+    letter-spacing: 0.06rem;
+    line-height: 18px;
+    margin: 0px;
+    text-align: justify;
+    margin-bottom: 40px;
+}
+
+.mobileActuBigContainer .date{
+    font-family: 'calsonproitalic';
+    margin-bottom: 25px;
+}
+
+.slick-arrow {
+    position: absolute;
+    top: -3%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    display: none !important;
+}
+
+.slick-prev {
+    left: 10px;
+}
+
+.slick-next {
+    right: 10px;
+}
+
+.slick-track {
+    display: flex;
+    align-items: center; /* Centrer les items verticalement */
+    gap: 10px;
+}
+
+
+.slide-item img {
+    width: 100%; /* Les images remplissent le conteneur */
+    height: auto;
+    display: block;
+}
