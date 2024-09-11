@@ -6,6 +6,7 @@ import './landingmobileactu.css'; // Ton propre fichier de styles
 import ACTU from '../../../assets/Actualites/mobile/ACTU.jpg';
 import CADET from '../../../assets/Actualites/mobile/CADET.jpg';
 import PL from '../../../assets/Actualites/mobile/PL.jpg';
+import BABA from '../../../assets/Actualites/mobile/BABA.jpg';
 import content from '../../../content.json';
 
 // Flèche Gauche
@@ -27,9 +28,10 @@ const ArrowRight = (props) => (
 );
 
 const images = [
-  { src: ACTU, textKey: 'actualite1' },
-  { src: CADET, textKey: 'actualite2' },
-  { src: PL, textKey: 'actualite3' }
+  { src: ACTU, textKey: 'presentationmobile' }, // Pour ACTU
+  { src: CADET, textKey: 'actualite1' }, // Pour CADET
+  { src: PL, textKey: 'actualite2' }, // Pour PL
+  { src: BABA, textKey: 'actualite3' }  // Pour BABA
 ];
 
 const LandingMobileActu = () => {
@@ -39,7 +41,7 @@ const LandingMobileActu = () => {
     setCurrentIndex(index);
   };
 
-  const currentText = content.actualites.fr[images[currentIndex].textKey];
+  const currentText = content.actualites.fr[images[currentIndex].textKey] || {};
 
   // Configuration du carrousel
   const settings = {
@@ -71,7 +73,7 @@ const LandingMobileActu = () => {
     <div className='landingMobileActu'>
         <div className='mobileActuBigContainer'>
             <div className='slider-text'>
-                <h1>LES ACTUALITES</h1>
+                <h1>{content.actualites.fr.bloctext.title}</h1>
                 <h2>{currentText.titre}</h2>
                 <p>{currentText.texte}</p>
                 <p className='date'>{currentText.date}</p>

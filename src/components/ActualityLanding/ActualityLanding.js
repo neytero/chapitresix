@@ -1,26 +1,30 @@
 import React, { useState } from 'react';
 import './actualitylanding.css';
 import content from '../../content.json';
-import LANDING from '../../assets/Actualites/landing.jpg';
+import LANDING from '../../assets/Actualites/PHOTOPRINCIPALE.jpg';
+import ARTICLE1 from '../../assets/Actualites/PRIXLITTERAIRE.jpg';
+import ARTICLE2 from '../../assets/Actualites/CADETCOMEDYCLUB.jpg';
+import ARTICLE3 from '../../assets/Actualites/PRIXLITTERAIRE.jpg';
 
 const ActualityLanding = () => {
   // État pour la langue sélectionnée et la catégorie filtrée
   const [selectedFilter, setSelectedFilter] = useState('Tous');
+  const [currentImage, setCurrentImage] = useState(LANDING); // État pour l'image actuelle
 
   // Fonction pour gérer les changements de filtre
   const handleFilterChange = (category) => {
     setSelectedFilter(category);
   };
 
-  // Obtenez tous les articles pour la langue "fr" (ou "en" si nécessaire)
+  // Obtenez tous les articles pour la langue "fr"
   const articles = [
-    content.actualites.fr.actualite1,
-    content.actualites.fr.actualite2,
-    content.actualites.fr.actualite3
+    { ...content.actualites.fr.actualite1, image: ARTICLE1 },
+    { ...content.actualites.fr.actualite2, image: ARTICLE2 },
+    { ...content.actualites.fr.actualite3, image: ARTICLE3 }
   ];
 
   // Filtrer les articles en fonction de la catégorie sélectionnée
-  const filteredArticles = articles.filter(article => 
+  const filteredArticles = articles.filter(article =>
     selectedFilter === 'Tous' || article.class === selectedFilter.toLowerCase()
   );
 
@@ -58,7 +62,12 @@ const ActualityLanding = () => {
             <div className='actualityLandingActualiteContent'>
               {filteredArticles.length > 0 ? (
                 filteredArticles.map((article, index) => (
-                  <div key={index} className={`actualityLandingUniqueContainer ${article.class}`}>
+                  <div 
+                    key={index} 
+                    className={`actualityLandingUniqueContainer ${article.class}`}
+                    onMouseEnter={() => setCurrentImage(article.image)} // Change l'image au survol
+                    onMouseLeave={() => setCurrentImage(LANDING)} // Réinitialise l'image lorsque la souris quitte
+                  >
                     <h2>{article.titre}</h2>
                     <p className='date'>{article.date}</p>
                     <p>{article.texte}</p>
@@ -70,7 +79,7 @@ const ActualityLanding = () => {
             </div>
           </div>
         </div>
-        <img src={LANDING} alt="Landing" className='actualityImgLandingDesktop' />
+        <img src={currentImage} alt="Actualité" className='actualityImgLandingDesktop' />
       </div>
     </div>
   );

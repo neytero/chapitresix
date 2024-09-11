@@ -33,9 +33,9 @@ const Navbar = ({ changePage, changeLanguage, isTransparent }) => {
 
   return (
     <nav>
-      <div className={`navContainer ${isTransparent ? 'transparent' : ''}`}>
+      <div className={`navContainer ${isTransparent ? 'transparent' : ''}` }>
         <div className="smallNavContainer">
-          <div className="navRight">
+          <div className="navRight" >
             <div onClick={toggleMenu} className={`burger-icon ${isLoaded ? 'fade-in' : 'hidden'}`}>
               <svg width="38" height="20" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 {!menuOpen && <rect x="38" y="20" width="38" height="0.999997" transform="rotate(-180 38 20)" fill="black" />}

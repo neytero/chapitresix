@@ -79,7 +79,7 @@
 
 .carouselSlider img {
     width: 100%;
-    height: 500px;
+    height: auto;
 }
 
 /* Assurez-vous que les boutons de défilement sont bien positionnés */

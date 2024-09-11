@@ -83,6 +83,10 @@
     font-family: 'calsonproitalic';
 }
 
+
+.actualityLandingUniqueContainer:hover{
+    cursor: pointer;
+}
 /*.actualityLandingActualiteContainer {
     height: 20%;
     overflow: auto;

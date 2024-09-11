@@ -62,6 +62,10 @@
         height: auto;
         margin: 0px 10px 10px 10px;
     }
+    
+    .containerLanding{
+        display: none;
+    }
 
     .container{
         flex-direction: column;
