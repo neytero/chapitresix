@@ -48,8 +48,8 @@
 .separateContainer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 60%;
+    justify-content: flex-start;
+    width: 65%;
 }
 
 .actualityLandingContainer h1,
@@ -107,7 +107,7 @@
 }*/
 
 .actualityLandingContainer img {
-    max-width: 40%;
+    max-width: 35%;
 }
 
 /*.actualityLandingUniqueContainer {

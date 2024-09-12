@@ -30,4 +30,14 @@
 
 .historySectionTexte .imgContainer{
     align-self: flex-end;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.historySectionTexte .imgContainer img{
+    align-self: flex-end;
+    width: 40%;
+    height: auto;
 }

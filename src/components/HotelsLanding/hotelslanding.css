@@ -1,10 +1,23 @@
+.ultraContainerHotels{
+height: 100vh;
+display: flex;
+align-items: flex-end;
+background-color: #FEFAF1;
+}
+
 .hotelsLandingContainer{
-    height: 100vh;
     display: flex;
-    background-color: #FEFAF1;
+    
     align-items: flex-end;
     gap: 20px;
     padding: 0px 20px 20px;
+    height: 100vh;
+    background-color: #FEFAF1;
+}
+
+
+.hotelsLandingContainer .slick-track{
+    gap: 20px;
 }
 
 .hotelsLandingContainer .feuillet{
@@ -28,7 +41,7 @@
     letter-spacing: 0.03rem;
     line-height: 15px;
     font-style: italic;
-    margin: 0px;
+    margin: 10px 0px;
 }
 
 .hotelsLandingContainer .feuillet .bottom{
@@ -37,10 +50,40 @@
     left: 0;
     background-color: #FEFAF1;
     width: 70%;
+    padding: 15px;
 }
 
 .hotelsLandingContainer .feuillet img{
     width: 100%;
     height: auto;
     align-self: flex-end;
+}
+
+.feuillet .top .title{
+    font-family: 'gustavo';
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    font-size: 14px;
+    margin: 0px 0px 10px;
+}
+
+.feuillet .bottom p{
+    font-family: 'gustavo';
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    font-size: 14px;
+}
+
+
+.feuillet .bottom .texte{
+    font-family: 'calsonpro';
+    letter-spacing: 0.03rem;
+    font-size: 16px;
+    line-height: 22px;
+    text-transform: initial;
+    margin: 10px 0px;
+}
+
+.feuillet .bottom .voyager{
+    text-align: right;
 }
