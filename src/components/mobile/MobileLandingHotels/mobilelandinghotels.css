@@ -1,0 +1,44 @@
+.ultraBigContainerMobileLandingHotels{
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    background-color: #FEFAF1;
+}
+
+.MobileLandingHotels{
+    width: 100%;
+    overflow: hidden;
+}
+
+  
+  .slick-slide {
+    text-align: center;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Optional: Style for slick dots (pagination) */
+  .slick-dots {
+    bottom: 10px;
+  }
+  
+  .slick-dots li button:before {
+    color: #000; /* Change color of dots if needed */
+  }
+  
+  .slick-prev, .slick-next {
+    color: #000; /* Change color of arrows if needed */
+  }
+  
+  
+  /* Optional: Hide arrows on mobile */
+  @media (max-width: 768px) {
+    .slick-prev, .slick-next {
+      display: none;
+    }
+  }
+  

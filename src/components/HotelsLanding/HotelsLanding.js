@@ -15,28 +15,12 @@ const HotelsLanding = () => {
         dots: false, // Désactive les bullets
         infinite: true,
         speed: 500,
-        slidesToShow: 3,
+        slidesToShow: 3.2, // Montre un seul slide à la fois pour un scroll en bloc
         slidesToScroll: 1,
         arrows: false, // Désactive les flèches
         autoplay: true, // Active le défilement automatique
         autoplaySpeed: 3000, // Durée entre chaque défilement (en ms)
         pauseOnHover: true, // Pause lors du survol de la souris
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                },
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                },
-            },
-        ],
     };
 
     return (
