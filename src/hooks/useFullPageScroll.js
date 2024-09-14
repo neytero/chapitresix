@@ -76,6 +76,9 @@ const useFullPageScroll = (setTransparent, setCurrentSection) => {
       touchStartY = 0; // Reset touchStartY
     };
 
+    // Debugging logs
+    console.log('Adding event listeners');
+    
     window.addEventListener('wheel', scrollHandler);
     window.addEventListener('touchstart', touchStartHandler, { passive: true });
     window.addEventListener('touchmove', touchMoveHandler, { passive: false });
@@ -84,6 +87,9 @@ const useFullPageScroll = (setTransparent, setCurrentSection) => {
     updateSectionClasses();
 
     return () => {
+      // Debugging logs
+      console.log('Removing event listeners');
+      
       window.removeEventListener('wheel', scrollHandler);
       window.removeEventListener('touchstart', touchStartHandler);
       window.removeEventListener('touchmove', touchMoveHandler);

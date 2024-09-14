@@ -69,10 +69,9 @@
     right: 10px;
 }
 
-.slick-track {
+.mobileActuBigContainer .slick-track {
     display: flex;
     align-items: center; /* Centrer les items verticalement */
-    gap: 10px;
 }
 
 
