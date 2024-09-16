@@ -23,6 +23,34 @@
     }
   }
   
+
+  .navContainer .filter{
+    display: flex;
+    justify-content: space-between;
+    width: 15%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 101;
+    color: black;
+    transform: translateX(-50%);
+}
+
+  .navContainer .filter p {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px;
+    font-family: 'calsonpro';
+    padding: 0px;
+    margin: 0px;
+    width: fit-content;
+  }
+
+  .navContainer .filter p.active {
+    border-bottom: 1px solid black;
+    font-family: 'calsonproitalic';
+  }
+
   .burger-icon svg:hover {
     cursor: pointer;
   }
@@ -72,6 +100,7 @@
     font-size: 17px;
     letter-spacing: 0.03rem;
     text-transform: uppercase;
+    display: none;
   }
   
   .booking:hover {
@@ -217,6 +246,10 @@
     .booking {
       display: none;
     }
+
+    .navContainer .filter{
+      display: none;
+  }
   
     .smallNavContainer {
       padding-top: 20px;

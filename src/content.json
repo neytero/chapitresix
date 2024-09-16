@@ -125,7 +125,39 @@
           "adresse":"159, rue Mgr Conseil, Megève",
           "titre":"Refuge intime tyrolien ",
           "texte":"Un chalet mégevan entièrement réinventé, coloré et atypique, idéal pour se ressourcer été comme hiver."
+        },
+
+        "barbizon":{
+          "nom":"LA FOLIE BARBIZON ****",
+          "adresse":"5, Grande Rue, Barbizon",
+          "titre":"forêt d’artistes ",
+          "texte":"À la fois hôtel, restaurant et résidence d'artistes, un lieu hybride où se croisent les artistes, où l’on dort, se cultive, échange, et se régale."
+        },
+        "paladium":{
+          "nom":"LE BUS PALLADIUM *****",
+          "adresse":"6, rue Pierre Fontaine, Paris 9",
+          "titre":"Temple Mythique",
+          "texte":"Renaissance d’un lieu mythique qui a vu défiler les plus grands, un bar-restaurant, une salle de concert et bien sûr un hôtel."
+        },
+        "cadet":{
+          "nom":"MONSIEUR CADET ****",
+          "adresse":"4, rue Cadet, Paris 9",
+          "titre":"Pavillon Art-Déco ",
+          "texte":"Immergé dans une joyeuse rue piétonne et commerçante, Monsieur Cadet siffle en regardant le ciel bleu de Paris."
+        },
+        "george":{
+          "nom":"MONSIEUR GEORGE *****",
+          "adresse":"17, rue Washington, Paris 8",
+          "titre":"Palais mystérieux ",
+          "texte":"Dandy et courtois, Monsieur George vous accueille dans son hôtel particulier des Champs-Elysées. Tout y est délicat et raffiné."
+        },
+        "saintonge":{
+          "nom":"MAISON SAINTONGE ****",
+          "adresse":"16, rue de Saintonge, Paris 3",
+          "titre":"Hôtel confiserie",
+          "texte":"Avis aux esthètes gourmands... Le charme unique d’un boutique-hôtel-confiserie en plein cœur du Marais."
         }
+
 
       },
 
@@ -165,6 +197,37 @@
           "adresse":"159, rue Mgr Conseil, Megève",
           "titre":"Refuge intime tyrolien ",
           "texte":"Un chalet mégevan entièrement réinventé, coloré et atypique, idéal pour se ressourcer été comme hiver."
+        },
+        "barbizon":{
+          "nom":"LA FOLIE BARBIZON ****",
+          "adresse":"5, Grande Rue, Barbizon",
+          "titre":"forêt d’artistes ",
+          "texte":"À la fois hôtel, restaurant et résidence d'artistes, un lieu hybride où se croisent les artistes, où l’on dort, se cultive, échange, et se régale."
+        },
+
+        "paladium":{
+          "nom":"LE BUS PALLADIUM *****",
+          "adresse":"6, rue Pierre Fontaine, Paris 9",
+          "titre":"Temple Mythique",
+          "texte":"Renaissance d’un lieu mythique qui a vu défiler les plus grands, un bar-restaurant, une salle de concert et bien sûr un hôtel."
+        },
+        "cadet":{
+          "nom":"MONSIEUR CADET ****",
+          "adresse":"4, rue Cadet, Paris 9",
+          "titre":"Pavillon Art-Déco ",
+          "texte":"Immergé dans une joyeuse rue piétonne et commerçante, Monsieur Cadet siffle en regardant le ciel bleu de Paris."
+        },
+        "george":{
+          "nom":"MONSIEUR GEORGE *****",
+          "adresse":"17, rue Washington, Paris 8",
+          "titre":"Palais mystérieux ",
+          "texte":"Dandy et courtois, Monsieur George vous accueille dans son hôtel particulier des Champs-Elysées. Tout y est délicat et raffiné."
+        },
+        "saintonge":{
+          "nom":"MAISON SAINTONGE ****",
+          "adresse":"16, rue de Saintonge, Paris 3",
+          "titre":"Hôtel confiserie",
+          "texte":"Avis aux esthètes gourmands... Le charme unique d’un boutique-hôtel-confiserie en plein cœur du Marais."
         }
       }
     },

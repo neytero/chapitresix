@@ -91,7 +91,7 @@
     content:none;
 }
 
-.slick-prev, .slick-next {
+.hotelListContainer, .slick-prev, .slick-next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './footer.css';
 import content from '../../content.json';
 import NAVPIC1 from '../../assets/Footer/PHOTO1.jpg';
@@ -9,6 +10,7 @@ import NAVPIC5 from '../../assets/Footer/PHOTO5.jpg';
 import NAVPIC6 from '../../assets/Footer/PHOTO6.jpg';
 import NAVPIC7 from '../../assets/Footer/PHOTO7.jpg';
 import NAVPIC8 from '../../assets/Footer/PHOTO8.jpg';
+
 
 const Footer = ({ changeLanguage }) => {
   const [activeLanguage, setActiveLanguage] = useState('fr'); // État pour la langue active
@@ -42,7 +44,7 @@ const Footer = ({ changeLanguage }) => {
       </div>
       <div className='footerContentContainer'>
         <div className='ligne1'>
-          <p>{content.home[activeLanguage].footer.recrutement}</p>
+          <Link to="https://careers.werecruit.io/fr/chapitre-six">{content.home[activeLanguage].footer.recrutement}</Link>
           <div className='languefooter'>
             <button 
               onClick={() => handleLanguageChange('fr')} 
@@ -57,11 +59,11 @@ const Footer = ({ changeLanguage }) => {
               EN
             </button>
           </div>
-          <p>{content.home[activeLanguage].footer.instagram}</p>
+          <Link to='https://www.instagram.com/chapitresix_hotels'>{content.home[activeLanguage].footer.instagram}</Link>
         </div>
         <div className='ligne2'>
-          <p>{content.home[activeLanguage].footer.contact}</p>
-          <p>{content.home[activeLanguage].footer.linkedin}</p>
+          <Link to='mailto:contact@chapitresix.com'>{content.home[activeLanguage].footer.contact}</Link>
+          <Link to='https://linkedin.com/company/chapitre-six-hotels'>{content.home[activeLanguage].footer.linkedin}</Link>
         </div>
         <div className='ligne3'>
           <p>{content.home[activeLanguage].footer.mentions}</p>
@@ -70,7 +72,7 @@ const Footer = ({ changeLanguage }) => {
             <input type="email" name="sub-email" placeholder="" />
             <p>{content.home[activeLanguage].footer.sub}</p>
           </div>
-          <p>{content.home[activeLanguage].footer.facebook}</p>
+          <Link to='https://www.facebook.com/chapitresixhotels/'>{content.home[activeLanguage].footer.facebook}</Link>
         </div>
       </div>
     </div>

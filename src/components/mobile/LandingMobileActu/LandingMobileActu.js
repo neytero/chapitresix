@@ -4,8 +4,8 @@ import 'slick-carousel/slick/slick.css'; // Import des styles Slick de base
 import 'slick-carousel/slick/slick-theme.css'; // Import des styles Slick thème
 import './landingmobileactu.css'; // Ton propre fichier de styles
 import ACTU from '../../../assets/Actualites/mobile/ACTU.jpg';
-import CADET from '../../../assets/Actualites/mobile/CADET.jpg';
-import PL from '../../../assets/Actualites/mobile/PL.jpg';
+import PL from '../../../assets/Actualites/mobile/CADET.jpg';
+import CADET from '../../../assets/Actualites/mobile/PL.jpg';
 import BABA from '../../../assets/Actualites/mobile/BABA.jpg';
 import content from '../../../content.json';
 

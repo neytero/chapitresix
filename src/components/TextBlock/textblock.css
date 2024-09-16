@@ -161,6 +161,11 @@
     flex-direction: column;
 }
 
+
+.carousselSecond:hover{
+    cursor: pointer;
+}
+
 .carousselSecond .image-wrapper {
     position: absolute;
     width: 100%;

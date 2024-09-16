@@ -69,6 +69,25 @@ const hotelAddresses = [
   "Monsieur Cadet, Paris 9",
 ];
 
+const urlSite = [
+  "https://laponche.com/",
+  "https://hoteldesacademies.fr/",
+  "https://laponche.com/",
+  "https://capdantibes-beachhotel.com/",
+  "https://hoteldesacademies.fr/",
+  "https://hotelhana-paris.com/",
+  "https://www.monsieuraristide.com/",
+  "https://www.monsieurcadet.com/",
+  "https://www.monsieurgeorge.com/",
+  "https://maisonsaintonge.com/",
+  "https://laponche.com/",
+  "https://www.monsieurgeorge.com/",
+  "https://capdantibes-beachhotel.com/",
+  "https://hotelhana-paris.com/",
+  "https://www.monsieuraristide.com/",
+  "https://www.monsieurcadet.com/",
+];
+
 const TextBlock = ({ transitionDuration = 500 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const carousselSecondRef = useRef(null);
@@ -108,6 +127,11 @@ const TextBlock = ({ transitionDuration = 500 }) => {
 
   const handleContainerClick = () => {
     setCurrentIndex(prevIndex => (prevIndex + 1) % images.length);
+  };
+
+  const handleImageClick = () => {
+    // Redirect to the URL corresponding to the currentIndex
+    window.location.href = urlSite[currentIndex];
   };
 
   return (
@@ -156,6 +180,7 @@ const TextBlock = ({ transitionDuration = 500 }) => {
                   opacity: index === currentIndex ? 1 : 0,
                   transition: `opacity ${transitionDuration}ms ease-in-out`,
                 }}
+                onClick={handleImageClick} // Add click handler
               />
             ))}
           </div>

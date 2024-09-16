@@ -50,7 +50,7 @@
     margin-bottom: 25px;
 }
 
-.slick-arrow {
+.mobileActuBigContainer .slick-arrow {
     position: absolute;
     top: -3%;
     transform: translateY(-50%);
@@ -72,6 +72,7 @@
 .mobileActuBigContainer .slick-track {
     display: flex;
     align-items: center; /* Centrer les items verticalement */
+    gap: 10px;
 }
 
 
@@ -79,4 +80,5 @@
     width: 100%; /* Les images remplissent le conteneur */
     height: auto;
     display: block;
+    margin: 0px 10px;
 }

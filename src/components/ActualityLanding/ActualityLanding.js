@@ -1,27 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './actualitylanding.css';
 import content from '../../content.json';
 import LANDING from '../../assets/Actualites/PHOTOPRINCIPALE.jpg';
 import ARTICLE1 from '../../assets/Actualites/PRIXLITTERAIRE.jpg';
 import ARTICLE2 from '../../assets/Actualites/CADETCOMEDYCLUB.jpg';
-import ARTICLE3 from '../../assets/Actualites/PRIXLITTERAIRE.jpg';
+import ARTICLE3 from '../../assets/Actualites/BABAMONDAYS.jpg';
+import { useFilter } from '../../FilterContext'; // Import du hook useFilter
 
 const ActualityLanding = () => {
-  // État pour la langue sélectionnée et la catégorie filtrée
-  const [selectedFilter, setSelectedFilter] = useState('Tous');
-  const [currentImage, setCurrentImage] = useState(LANDING); // État pour l'image actuelle
+  const { selectedFilter } = useFilter(); // Utilisation du contexte pour obtenir et définir le filtre sélectionné
+  const [currentImage, setCurrentImage] = React.useState(LANDING); // État pour l'image actuelle
 
-  // Fonction pour gérer les changements de filtre
-  const handleFilterChange = (category) => {
-    setSelectedFilter(category);
-  };
-
-  // Obtenez tous les articles pour la langue "fr"
+  // Liste des articles avec leurs images
   const articles = [
     { ...content.actualites.fr.actualite1, image: ARTICLE1 },
     { ...content.actualites.fr.actualite2, image: ARTICLE2 },
     { ...content.actualites.fr.actualite3, image: ARTICLE3 }
   ];
+
+  // Fonction pour gérer les changements de filtre
 
   // Filtrer les articles en fonction de la catégorie sélectionnée
   const filteredArticles = articles.filter(article =>
@@ -30,26 +27,6 @@ const ActualityLanding = () => {
 
   return (
     <div className='actualityLandingContainer'>
-      <div className='filter'>
-        <p 
-          onClick={() => handleFilterChange('Paris')} 
-          className={selectedFilter === 'Paris' ? 'active' : ''}
-        >
-          Paris
-        </p>
-        <p 
-          onClick={() => handleFilterChange('Ailleurs')} 
-          className={selectedFilter === 'Ailleurs' ? 'active' : ''}
-        >
-          Ailleurs
-        </p>
-        <p 
-          onClick={() => handleFilterChange('Tous')} 
-          className={selectedFilter === 'Tous' ? 'active' : ''}
-        >
-          Tous
-        </p>
-      </div>
       <div className='actualityLandingSmallContainer'>
         <div className='separateContainer'>
           <div className='actualityLandingTextBlock'>

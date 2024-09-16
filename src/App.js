@@ -10,6 +10,7 @@ import Actualites from './components/NosActualites'
 import './App.css';
 import useFullPageScroll from './hooks/useFullPageScroll';
 import BookingButton from './components/BookingButton/bookingButton';
+import { FilterProvider } from './FilterContext';
 
 const App = () => {
   const [language, setLanguage] = useState('en');
@@ -70,33 +71,35 @@ const App = () => {
   useFullPageScroll(setTransparent, setCurrentSection);
 
   return (
-    <Router>
-      <Navbar
-        changePage={changePage}
-        changeLanguage={setLanguage}
-        isTransparent={transparent}
-      />
-      <Routes>
-        <Route path="/" element={<HomePage content={contentState.home} />} />
-        <Route path="/history" element={<HistoryPage content={contentState.history} />} />
-        <Route path="/les-hotels" element={<Hotels content={contentState.hotels} />} />
-        <Route path="/nos-actualites" element={<Actualites content={contentState.history} />} />
-      </Routes>
-      {isMobile ? (
-        <footer className="section">
-          <FooterMobile changeLanguage={setLanguage} content={contentState.footer} />
-        </footer>
-      ) : (
-        <footer className="section">
-          <Footer changeLanguage={setLanguage} content={contentState.footer} />
-        </footer>
-      )}
-      {buttonVisibility && (
-        <BookingButton
-          className={`reserve-button ${buttonVisibility} ${currentSection === 0 ? 'landing' : ''}`}
+    <FilterProvider>
+      <Router>
+        <Navbar
+          changePage={changePage}
+          changeLanguage={setLanguage}
+          isTransparent={transparent}
         />
-      )}
-    </Router>
+        <Routes>
+          <Route path="/" element={<HomePage content={contentState.home} />} />
+          <Route path="/histoire" element={<HistoryPage content={contentState.history} />} />
+          <Route path="/les-hotels" element={<Hotels content={contentState.hotels} />} />
+          <Route path="/nos-actualites" element={<Actualites content={contentState.history} />} />
+        </Routes>
+        {isMobile ? (
+          <footer className="section">
+            <FooterMobile changeLanguage={setLanguage} content={contentState.footer} />
+          </footer>
+        ) : (
+          <footer className="section">
+            <Footer changeLanguage={setLanguage} content={contentState.footer} />
+          </footer>
+        )}
+        {buttonVisibility && (
+          <BookingButton
+            className={`reserve-button ${buttonVisibility} ${currentSection === 0 ? 'landing' : ''}`}
+          />
+        )}
+      </Router>
+    </FilterProvider>
   );
 };
 

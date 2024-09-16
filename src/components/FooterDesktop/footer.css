@@ -3,6 +3,15 @@
     background-color: #FEFAF1;
 }
 
+
+.footerContainer a{
+    color: black;
+    text-decoration: none;
+}
+
+.footerContainera:hover{
+    cursor: pointer;
+}
 .imageContainer {
     width: 100%;
     display: flex;

@@ -127,7 +127,7 @@ const HotelList = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 3000,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,

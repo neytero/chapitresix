@@ -20,11 +20,17 @@
     justify-content: space-between;
 }
 
-.contentFooterMobileContainer p, .contentFooterMobileContainer button{
+.contentFooterMobileContainer p,.contentFooterMobileContainer a, .contentFooterMobileContainer button{
     font-family: 'gustavo';
     font-size: 12px;
     letter-spacing: 0.03rem;
     text-transform: uppercase;
+}
+
+.contentFooterMobileContainer a{
+    color: black;
+    text-decoration: none;
+    margin: 10px 0px;
 }
 
 .langueMobileFooter{
