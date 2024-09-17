@@ -69,11 +69,14 @@ const LandingMobileActu = () => {
     ],
   };
 
+  // Vérifie si l'image actuelle est ACTU
+  const isActuImage = images[currentIndex].src === ACTU;
+
   return (
     <div className='landingMobileActu'>
         <div className='mobileActuBigContainer'>
             <div className='slider-text'>
-                <h1>{content.actualites.fr.bloctext.title}</h1>
+                {isActuImage && <h1>{content.actualites.fr.bloctext.title}</h1>}
                 <h2>{currentText.titre}</h2>
                 <p>{currentText.texte}</p>
                 <p className='date'>{currentText.date}</p>

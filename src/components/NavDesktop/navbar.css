@@ -2,7 +2,10 @@
     opacity: 0;
     visibility: hidden;
   }
-  
+
+  .containerLogo{
+    width: 19%;
+  }
 
   .Sublogo{
     width: 100%;
@@ -242,6 +245,10 @@
   }
   
   @media screen and (max-width: 1024px) {
+
+    .containerLogo{
+      width: 85%;
+    }
     .Sublogo,
     .booking {
       display: none;
@@ -257,7 +264,7 @@
     }
   
     .Logo {
-      width: 85%;
+      width: 100%;
       height: auto;
     }
   

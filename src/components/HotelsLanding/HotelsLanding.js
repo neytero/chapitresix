@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './hotelslanding.css'; 
 import content from '../../content.json';
 import IMAGE1 from '../../assets/Hotels/HOTELHANA.jpg';
@@ -44,6 +44,7 @@ const items = [
 
 const HotelsLanding = () => {
     const { selectedFilter } = useFilter(); // Utilisation du contexte pour obtenir le filtre sélectionné
+    const [paused, setPaused] = useState(false); // État pour contrôler si le carrousel est en pause
 
     // Filtrer les articles en fonction de la catégorie sélectionnée
     const filteredItems = items.filter(item =>
@@ -51,8 +52,12 @@ const HotelsLanding = () => {
     );
 
     return (
-        <div className="carouselHotelsLanding">
-            <div className="carousel-inner">
+        <div
+            className="carouselHotelsLanding"
+            onMouseEnter={() => setPaused(true)} // Met le carrousel en pause quand la souris entre
+            onMouseLeave={() => setPaused(false)} // Reprend le carrousel quand la souris quitte
+        >
+            <div className={`carousel-inner ${paused ? 'paused' : ''}`}>
                 {filteredItems.concat(filteredItems).map((item, index) => (
                     <a 
                         href={urlSite[index % urlSite.length]} 

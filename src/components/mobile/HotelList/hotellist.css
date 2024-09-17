@@ -30,6 +30,11 @@
     align-items: center;
     gap: 45px;
     margin-bottom: 65px;
+    width: 100%;
+}
+
+.hotelListSection .carouselOverlay{
+  top: 10px;
 }
 
 .hotelListContainer a {

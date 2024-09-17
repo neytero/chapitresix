@@ -8,6 +8,12 @@
     background-color: #FEFAF1;
 }
 
+/* Ajoutez cette classe à votre CSS */
+.carousel-inner.paused {
+    animation-play-state: paused; /* Met l'animation en pause */
+}
+
+
 .carousel-inner {
     display: flex;
     width: 200%; /* Ajustez en fonction du nombre d'éléments */

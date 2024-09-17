@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import LOGO from '../../assets/LOGO-CHAPITRE-SIX.svg';
+import LOGO from '../../assets/LOGO-CHAPITRE-SIX.png';
 import SUBLOGO from '../../assets/Deshistoires.svg';
 import './navbar.css';
 import content from '../../content.json';
@@ -45,7 +45,7 @@ const Navbar = ({ changePage, changeLanguage, isTransparent }) => {
               </svg>
             </div>
 
-            <Link to="/" onClick={() => closeMenuAndChangePage('home')}>
+            <Link className='containerLogo' to="/" onClick={() => closeMenuAndChangePage('home')}>
               <img src={LOGO} alt="Logo" className="Logo" />
             </Link>
 

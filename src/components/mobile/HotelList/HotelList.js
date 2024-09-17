@@ -6,7 +6,6 @@ import '../HotelList/hotellist.css';
 import { Link } from 'react-router-dom';
 import content from '../../../content.json';
 
-
 import PICTURE1 from '../../../assets/Home/mobile/caroussel/PHOTO1.jpg';
 import PICTURE2 from '../../../assets/Home/mobile/caroussel/PHOTO2.jpg';
 import PICTURE3 from '../../../assets/Home/mobile/caroussel/PHOTO3.jpg';
@@ -61,11 +60,26 @@ const hotelAddresses = [
   "17, rue du Quatre-Septembre, Paris 2"
 ];
 
+const urls = [
+  "https://hotelhana-paris.com/",
+  "https://www.monsieurgeorge.com/",
+  "https://www.buspalladium.com/",
+  "https://laponche.com/",
+  "https://capdantibes-beachhotel.com/",
+  "https://chaletsaintgeorges.com/fr",
+  "https://maisonsaintonge.com/",
+  "https://hoteldesacademies.fr/",
+  "https://www.monsieurcadet.com/",
+  "https://www.monsieuraristide.com/",
+  "https://www.lafoliebarbizon.com/"
+];
+
 const HotelList = () => {
   const [isCarouselVisible, setCarouselVisible] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentHotelName, setCurrentHotelName] = useState(hotelNames[0]);
   const [currentHotelAddress, setCurrentHotelAddress] = useState(hotelAddresses[0]);
+  const [currentUrl, setCurrentUrl] = useState(urls[0]); // New state for URL
   const [fadeClass, setFadeClass] = useState('');
   const sliderRef = useRef(null);
 
@@ -85,10 +99,15 @@ const HotelList = () => {
     setCarouselVisible(true);
     setCurrentHotelName(hotelNames[index]);
     setCurrentHotelAddress(hotelAddresses[index]);
+    setCurrentUrl(urls[index]); // Update current URL
   };
 
   const handleCloseCarousel = () => {
     setCarouselVisible(false);
+  };
+
+  const handleRedirect = () => {
+    window.location.href = currentUrl;
   };
 
   const PrevArrow = (props) => {
@@ -137,6 +156,7 @@ const HotelList = () => {
       setTimeout(() => {
         setCurrentHotelName(hotelNames[newIndex]);
         setCurrentHotelAddress(hotelAddresses[newIndex]);
+        setCurrentUrl(urls[newIndex]); // Update URL for new slide
         setFadeClass('visible');
       }, 500);
     }
@@ -174,9 +194,9 @@ const HotelList = () => {
                 </div>
               ))}
             </Slider>
-            <div className={`carouselText ${fadeClass}`}>{currentHotelName}</div>
-            <div className={`carouselTextAdress ${fadeClass}`}>{currentHotelAddress}</div>
-            <p className='fly'>voyager</p>
+            <div className={`carouselText ${fadeClass}`} onClick={handleRedirect}>{currentHotelName}</div>
+            <div className={`carouselTextAdress ${fadeClass}`} onClick={handleRedirect}>{currentHotelAddress}</div>
+            <p className='fly' onClick={handleRedirect}>voyager</p>
           </div>
         </div>
       )}
