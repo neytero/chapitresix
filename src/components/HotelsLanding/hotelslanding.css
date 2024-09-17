@@ -8,21 +8,19 @@
     background-color: #FEFAF1;
 }
 
-/* Ajoutez cette classe à votre CSS */
 .carousel-inner.paused {
     animation-play-state: paused; /* Met l'animation en pause */
 }
 
-
 .carousel-inner {
     display: flex;
-    width: 200%; /* Ajustez en fonction du nombre d'éléments */
+    width: 100%; /* La largeur totale est calculée par le style inline */
     animation: scroll 20s linear infinite; /* Animation fluide */
 }
 
 .carousel-item {
     flex: 0 0 auto;
-    width: 28.33%; 
+    width: 28.33% !important; /* Ajustez en fonction du nombre d'éléments visibles */
     box-sizing: border-box;
     margin: 0px 10px;
 }
@@ -52,7 +50,7 @@ img {
     margin: 0px;
 }
 
-.top .adress {
+.top .address {
     font-family: 'calsonproitalic';
     font-size: 17px;
     letter-spacing: 0.03rem;
@@ -90,7 +88,7 @@ img {
     text-align: right;
 }
 
-.carouselHotelsLanding a{
+.carouselHotelsLanding a {
     color: black;
     text-decoration: none;
 }

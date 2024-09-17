@@ -55,7 +55,8 @@ const MobileLandingHotels = () => {
     image,
     name: hotelNames[index],
     address: hotelAddresses[index],
-    category: categories[index]
+    category: categories[index],
+    url: urlSite[index] // Inclure l'URL ici
   })).filter(hotel =>
     selectedFilter === 'Tous' || hotel.category === selectedFilter.toLowerCase()
   );
@@ -80,7 +81,8 @@ const MobileLandingHotels = () => {
   };
 
   const handleImageClick = () => {
-    window.location.href = urlSite[currentSlide];
+    // Utiliser l'URL de l'hôtel actuellement affiché
+    window.location.href = filteredHotels[currentSlide]?.url;
   };
 
   return (

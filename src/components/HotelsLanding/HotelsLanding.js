@@ -43,28 +43,41 @@ const items = [
 ];
 
 const HotelsLanding = () => {
-    const { selectedFilter } = useFilter(); // Utilisation du contexte pour obtenir le filtre sélectionné
-    const [paused, setPaused] = useState(false); // État pour contrôler si le carrousel est en pause
+    const { selectedFilter } = useFilter();
+    const [paused, setPaused] = useState(false);
 
     // Filtrer les articles en fonction de la catégorie sélectionnée
     const filteredItems = items.filter(item =>
         selectedFilter === 'Tous' || item.category === selectedFilter.toLowerCase()
     );
 
+    // Dupliquer les éléments pour un effet infini
+    const duplicatedItems = [...filteredItems, ...filteredItems];
+
+    const itemsToShow = 3; // Nombre d'éléments visibles à la fois
+    const itemsCount = duplicatedItems.length;
+
+    const carouselWidth = `calc(${itemsCount} * 100%)`;
+    const itemWidth = `calc(100% / ${itemsToShow})`;
+
     return (
         <div
             className="carouselHotelsLanding"
-            onMouseEnter={() => setPaused(true)} // Met le carrousel en pause quand la souris entre
-            onMouseLeave={() => setPaused(false)} // Reprend le carrousel quand la souris quitte
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
         >
-            <div className={`carousel-inner ${paused ? 'paused' : ''}`}>
-                {filteredItems.concat(filteredItems).map((item, index) => (
-                    <a 
-                        href={urlSite[index % urlSite.length]} 
-                        className="carousel-item" 
-                        key={index} 
-                        target="_blank" 
+            <div
+                className={`carousel-inner ${paused ? 'paused' : ''}`}
+                style={{ width: carouselWidth }}
+            >
+                {duplicatedItems.map((item, index) => (
+                    <a
+                        href={urlSite[index % urlSite.length]}
+                        className="carousel-item"
+                        key={index}
+                        target="_blank"
                         rel="noopener noreferrer"
+                        style={{ width: itemWidth }}
                     >
                         <div className='feuillet'>
                             <div className='top'>
