@@ -3,7 +3,7 @@ import './hotelslanding.css';
 import content from '../../content.json';
 import IMAGE1 from '../../assets/Hotels/HOTELHANA.jpg';
 import IMAGE2 from '../../assets/Hotels/CABH.jpg';
-import IMAGE3 from '../../assets/Hotels/LAPONCHE.jpg';
+import IMAGE3 from '../../assets/Hotels/LaPonche.jpg';
 import IMAGE4 from '../../assets/Hotels/MONSIEURARISTIDE.jpg';
 import IMAGE5 from '../../assets/Hotels/ACADEMIES.jpg';
 import IMAGE6 from '../../assets/Hotels/MEGEVE.jpg';
