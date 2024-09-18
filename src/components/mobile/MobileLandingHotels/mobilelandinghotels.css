@@ -91,13 +91,17 @@
   color: white;
   text-align: center;
   z-index: 20;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 500ms ease-in-out;
   text-align: left;
 }
 
 .hotel-info.visible {
   opacity: 1;
+}
+
+.hotel-info:not(.visible) {
+  opacity: 0; /* Cela permet d'assurer que l'élément est caché par défaut, si nécessaire */
 }
 
 .hotel-name {

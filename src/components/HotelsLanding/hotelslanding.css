@@ -20,7 +20,7 @@
 
 .carousel-item {
     flex: 0 0 auto;
-    width: 28.33% !important; /* Ajustez en fonction du nombre d'éléments visibles */
+    width: 439px !important; /* Ajustez en fonction du nombre d'éléments visibles */
     box-sizing: border-box;
     margin: 0px 10px;
 }

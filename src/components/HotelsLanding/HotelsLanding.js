@@ -57,6 +57,8 @@ const HotelsLanding = () => {
     const itemsToShow = 3; // Nombre d'éléments visibles à la fois
     const itemsCount = duplicatedItems.length;
 
+    // Ajuster la durée de l'animation en fonction du nombre d'éléments
+    const duration = Math.max(20, itemsCount * 2); // Minimum 20s, augmente avec les éléments
     const carouselWidth = `calc(${itemsCount} * 100%)`;
     const itemWidth = `calc(100% / ${itemsToShow})`;
 
@@ -68,7 +70,7 @@ const HotelsLanding = () => {
         >
             <div
                 className={`carousel-inner ${paused ? 'paused' : ''}`}
-                style={{ width: carouselWidth }}
+                style={{ width: carouselWidth, animationDuration: `${duration}s` }}
             >
                 {duplicatedItems.map((item, index) => (
                     <a

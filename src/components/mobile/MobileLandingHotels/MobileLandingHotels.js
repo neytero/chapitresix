@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Slider from 'react-slick';
 import './mobilelandinghotels.css';
 import { useFilter } from '../../../FilterContext'; // Assurez-vous que ce chemin est correct
@@ -34,7 +34,7 @@ const hotelAddresses = [
 ];
 
 const categories = [
-  'paris', 'ailleurs', 'ailleurs', 'paris', 'paris', 'paris', 'paris', 'paris', 'ailleurs', 'ailleurs', 'ailleurs'
+  'paris', 'ailleurs', 'ailleurs', 'paris', 'paris', 'paris', 'paris', 'paris', 'ailleurs', 'ailleurs', 'paris'
 ];
 
 const urlSite = [
@@ -46,17 +46,16 @@ const urlSite = [
 
 const MobileLandingHotels = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [fadeClass, setFadeClass] = useState('');
+  const [fadeClass, setFadeClass] = useState('visible'); // Assurez-vous qu'il est visible par défaut
   const sliderRef = useRef(null);
   const { selectedFilter, handleFilterChange } = useFilter();
 
-  // Filtrer les hôtels en fonction du filtre sélectionné
   const filteredHotels = images.map((image, index) => ({
     image,
     name: hotelNames[index],
     address: hotelAddresses[index],
     category: categories[index],
-    url: urlSite[index] // Inclure l'URL ici
+    url: urlSite[index]
   })).filter(hotel =>
     selectedFilter === 'Tous' || hotel.category === selectedFilter.toLowerCase()
   );
@@ -71,24 +70,27 @@ const MobileLandingHotels = () => {
     autoplaySpeed: 3000,
     arrows: true,
     beforeChange: (oldIndex, newIndex) => {
-      setFadeClass('');
+      setFadeClass(''); // Masquer le contenu lors du changement
       setTimeout(() => {
         setCurrentSlide(newIndex);
-        setFadeClass('visible');
+        setFadeClass('visible'); // Rendre le contenu visible après un délai
       }, 500);
     },
     ref: sliderRef
   };
 
   const handleImageClick = () => {
-    // Utiliser l'URL de l'hôtel actuellement affiché
     window.location.href = filteredHotels[currentSlide]?.url;
   };
+
+  // Utiliser useEffect pour s'assurer que les informations sont correctes au chargement
+  useEffect(() => {
+    setFadeClass('visible'); // S'assurer que le contenu est visible au premier chargement
+  }, [filteredHotels, currentSlide]);
 
   return (
     <div className='ultraBigContainerMobileLandingHotels'>
       <div className='MobileLandingHotels'>
-        {/* Boutons de filtrage */}
         <div className='filter'>
           <button 
             onClick={() => handleFilterChange('Tous')} 
@@ -117,9 +119,10 @@ const MobileLandingHotels = () => {
             </div>
           ))}
         </Slider>
+
         <div className={`hotel-info ${fadeClass}`}>
-          <h2 className='hotel-name'>{filteredHotels[currentSlide]?.name}</h2>
-          <p className='hotel-address'>{filteredHotels[currentSlide]?.address}</p>
+          <h2 className='hotel-name'>{filteredHotels[currentSlide]?.name || ''}</h2>
+          <p className='hotel-address'>{filteredHotels[currentSlide]?.address || ''}</p>
         </div>
         <p className='travel'>Voyager</p>
       </div>

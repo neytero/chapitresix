@@ -36,6 +36,7 @@
 .langueMobileFooter{
     display: flex;
     gap: 20px;
+    opacity: 0;
 }
 
 .langueMobileFooter button{
