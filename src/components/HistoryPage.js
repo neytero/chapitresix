@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import HistoryLanding from './HistoryLanding/HistoryLanding';
 import Landing from './mobile/History/Landing/Landing';
 import ImageSection from './mobile/History/ImageSection/ImageSection';
@@ -21,6 +22,10 @@ const HistoryPage = ({ content }) => {
 
   return (
     <div>
+       <Helmet>
+        <title>Chapitre Six Hotels Paris | Une collection unique de boutiques hôtels</title>
+        <meta name="description" content="Découvrez Chapitre Six Hotels Paris, une collection de boutiques hôtels à l’image de la manière de vivre et de la personnalité de son hôte. Chaque pièce, chaque chambre est sans pareil." />
+      </Helmet>
       <section className="section">
         {windowWidth > 1024 ? (
           <HistoryLanding content={content} />
